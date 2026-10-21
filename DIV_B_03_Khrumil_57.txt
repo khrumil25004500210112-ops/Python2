@@ -1,0 +1,3929 @@
+1.
+==
+name = "Khrumil"
+roll_no = "57"
+programme = "M.Sc. IT"
+semester = "Semester 1"
+print(name)
+print(roll_no)
+print(programme)
+print(semester)
+'''
+Khrumil
+57
+M.Sc. IT
+Semester 1
+'''
+================================================
+
+2.
+==
+name = input("Enter Khrumil: ")
+age = input("Enter your age: ")
+city = input("Enter your favourite city: ")
+print("Hello! My name is " + name + ". I am " + age + " years old and I love " + city + ".")
+'''
+Enter Khrumil: KHRUMIL
+Enter your age: 18
+Enter your favourite city: GOA
+Hello! My name is KHRUMIL. I am 18 years old and I love GOA.
+'''
+=================================================
+
+3.
+==
+principal = float(input("Enter principal amount: "))
+rate = float(input("Enter annual rate (%): "))
+time = float(input("Enter time (years): "))
+interest = principal * rate * time / 100
+print("Simple interest:", round(interest, 2))
+print("Total amount:", round(principal + interest, 2))
+'''
+Enter principal amount: 50
+Enter annual rate (%): 20
+Enter time (years): 2020
+Simple interest: 20200.0
+Total amount: 20250.0
+'''
+===============================================
+
+4.
+==
+celsius = float(input("Enter temperature in Celsius: "))
+fahrenheit = celsius * 9 / 5 + 32
+kelvin = celsius + 273.15
+print("Fahrenheit:", round(fahrenheit, 2), "F")
+print("Kelvin:", round(kelvin, 2), "K")
+'''
+Enter temperature in Celsius: 30
+Fahrenheit: 86.0 F
+Kelvin: 303.15 K
+'''
+================================================
+
+5.
+==
+from math import pi
+
+length = float(input("Enter rectangle length: "))
+breadth = float(input("Enter rectangle breadth: "))
+print("Rectangle area:", round(length * breadth, 2))
+print("Rectangle perimeter:", round(2 * (length + breadth), 2))
+print("Circle area (radius = length):", round(pi * length ** 2, 2))
+'''
+Enter rectangle length: 20
+Enter rectangle breadth: 10
+Rectangle area: 200.0
+Rectangle perimeter: 60.0
+Circle area (radius = length): 1256.64
+'''
+=======================================================
+
+6.
+==
+basic = float(input("Enter basic salary: "))
+hra = basic * 0.20
+da = basic * 0.10
+pf = basic * 0.12
+gross = basic + hra + da
+print("Gross salary:", round(gross, 2))
+print("Net salary:", round(gross - pf, 2))
+'''
+Enter basic salary: 10000
+Gross salary: 13000.0
+Net salary: 11800.0
+'''
+==============================================
+
+7.extract digits of a three-digit number
+==
+number = int(input("Enter a three-digit number: "))
+if 100 <= abs(number) <= 999:
+    number = abs(number)
+    hundreds, remainder = divmod(number, 100)
+    tens, units = divmod(remainder, 10)
+    print("Hundreds:", hundreds)
+    print("Tens:", tens)
+    print("Units:", units)
+    print("Sum:", hundreds + tens + units)
+    print("Product:", hundreds * tens * units)
+else:
+    print("Please enter exactly a three-digit number.")
+'''
+Enter a three-digit number: 123
+Hundreds: 1
+Tens: 2
+Units: 3
+Sum: 6
+Product: 6
+'''
+===============================================
+
+8.kilometre converter
+==
+kilometres = float(input("Enter distance in kilometres: "))
+print("Metres:", round(kilometres * 1000, 2))
+print("Centimetres:", round(kilometres * 100000, 2))
+print("Miles:", round(kilometres * 0.621371, 2))
+print("Feet:", round(kilometres * 3280.84, 2))
+'''
+Enter distance in kilometres: 15
+Metres: 15000.0
+Centimetres: 1500000.0
+Miles: 9.32
+Feet: 49212.6
+'''
+================================================
+
+9.swap two numbers in two ways
+==
+a = float(input("Enter first number: "))
+b = float(input("Enter second number: "))
+original_a, original_b = a, b
+print("Before swap: a =", a, ", b =", b)
+a, b = b, a
+print("Tuple swap: a =", a, ", b =", b)
+a, b = original_a, original_b
+a = a + b
+b = a - b
+a = a - b
+print("Arithmetic swap: a =", a, ", b =", b)
+'''
+Enter first number: 12
+Enter second number: 13
+Before swap: a = 12.0 , b = 13.0
+Tuple swap: a = 13.0 , b = 12.0
+Arithmetic swap: a = 13.0 , b = 12.0
+'''
+============================================
+
+"""Program 1.10: BMI calculator."""
+
+weight = float(input("Enter weight in kg: "))
+height = float(input("Enter height in metres: "))
+if height <= 0:
+    print("Height must be greater than zero.")
+else:
+    bmi = weight / height ** 2
+    if bmi < 18.5:
+        category = "Underweight"
+    elif bmi < 25:
+        category = "Normal"
+    elif bmi < 30:
+        category = "Overweight"
+    else:
+        category = "Obese"
+    print("BMI:", round(bmi, 2), "(" + category + ")")
+'''
+Enter weight in kg: 16
+Enter height in metres: 20
+BMI: 0.04 (Underweight)
+'''
+=================================================
+
+"""Program 1.11: marks, percentage and average."""
+
+marks = []
+for subject in range(1, 6):
+    marks.append(float(input("Enter marks for subject " + str(subject) + ": ")))
+total = sum(marks)
+print("Total:", round(total, 2), "/500")
+print("Percentage:", round(total / 5, 2), "%")
+print("Average:", round(total / 5, 2))
+'''
+Enter marks for subject 1: 20
+Enter marks for subject 2: 25
+Enter marks for subject 3: 30
+Enter marks for subject 4: 22
+Enter marks for subject 5: 27
+Total: 124.0 /500
+Percentage: 24.8 %
+Average: 24.8
+'''
+================================================
+
+"""Program 1.12: electric bill calculator."""
+
+previous = float(input("Enter previous meter reading: "))
+current = float(input("Enter current meter reading: "))
+units = current - previous
+if units < 0:
+    print("Current reading cannot be less than previous reading.")
+else:
+    print("Units consumed:", round(units, 2))
+    print("Total bill: Rs.", round(units * 5.50 + 100, 2))
+'''
+Enter previous meter reading: 665
+Enter current meter reading: 60
+Current reading cannot be less than previous reading.
+'''
+========================================================
+
+"""Program 1.13: classify a number."""
+
+number = int(input("Enter an integer: "))
+sign = "positive" if number > 0 else "negative" if number < 0 else "zero"
+parity = "even" if number % 2 == 0 else "odd"
+divisible = "is" if number % 5 == 0 else "is not"
+print("The number is", sign + ",", parity + ", and", divisible, "divisible by 5.")
+'''
+Enter an integer: 10
+The number is positive, even, and is divisible by 5.
+'''
+==========================================================
+
+"""Program 1.14: grade calculator."""
+
+marks = float(input("Enter marks: "))
+if marks >= 90:
+    grade = "A+"
+elif marks >= 80:
+    grade = "A"
+elif marks >= 70:
+    grade = "B"
+elif marks >= 60:
+    grade = "C"
+elif marks >= 35:
+    grade = "D"
+else:
+    grade = "Fail"
+print("Grade:", grade)
+if marks >= 90:
+    print("Distinction")
+'''
+Enter marks: 28
+Grade: Fail
+'''
+====================================================
+
+"""Program 1.15: multiplication table."""
+
+number = int(input("Enter a number: "))
+for value in range(1, 11):
+    print(number, "x", value, "=", number * value)
+'''
+Enter a number: 5
+5 x 1 = 5
+5 x 2 = 10
+5 x 3 = 15
+5 x 4 = 20
+5 x 5 = 25
+5 x 6 = 30
+5 x 7 = 35
+5 x 8 = 40
+5 x 9 = 45
+5 x 10 = 50
+'''
+====================================================
+
+"""Program 1.16: factorial using a for loop."""
+number = int(input("Enter a non-negative integer: "))
+if number < 0:
+    print("Factorial is not defined for negative numbers.")
+else:
+    fact = 1
+    for value in range(2, number + 1):
+        fact *= value
+    print(number, "! =", fact)
+'''
+Enter a non-negative integer: 5
+5 ! = 120
+'''
+=======================================================
+
+"""Program 1.17: check a prime and list primes."""
+def is_prime(number):
+    if number < 2:
+        return False
+    for divisor in range(2, int(number ** 0.5) + 1):
+        if number % divisor == 0:
+            return False
+    return True
+
+number = int(input("Enter N: "))
+if is_prime(number):
+    print(number, "is prime.")
+else:
+    print(number, "is not prime.")
+print("Primes from 2 to N:", *[n for n in range(2, number + 1) if is_prime(n)])
+'''
+Enter N: 6
+6 is not prime.
+Primes from 2 to N: 2 3 5
+'''
+=====================================================
+
+"""Program 1.18: Fibonacci series with while loop."""
+terms = int(input("How many terms? "))
+a, b, count = 0, 1, 0
+while count < terms:
+    print(a, end=" ")
+    a, b = b, a + b
+    count += 1
+print()
+'''
+How many terms? 5
+0 1 1 2 3 
+'''
+=====================================================
+
+"""Program 1.19: reverse and test a number."""
+original = int(input("Enter a non-negative number: "))
+if original < 0:
+    print("Please enter a non-negative number.")
+else:
+    number, reverse = original, 0
+    while number > 0:
+        reverse = reverse * 10 + number % 10
+        number //= 10
+    print("Reversed number:", reverse)
+    print("It is a palindrome." if original == reverse else "It is not a palindrome.")
+'''
+Enter a non-negative number: 5
+Reversed number: 5
+It is a palindrome.
+'''
+=======================================================
+
+"""Program 1.20: star pattern collection."""
+rows = 5
+print("Right-angled triangle")
+for i in range(1, rows + 1): print("*" * i)
+print("Inverted triangle")
+for i in range(rows, 0, -1): print("*" * i)
+print("Diamond")
+for i in range(1, rows + 1, 2): print(" " * ((rows - i) // 2) + "*" * i)
+for i in range(rows - 2, 0, -2): print(" " * ((rows - i) // 2) + "*" * i)
+'''
+Right-angled triangle
+*
+**
+***
+****
+*****
+Inverted triangle
+*****
+****
+***
+**
+*
+Diamond
+  *
+ ***
+*****
+ ***
+  *
+  '''
+====================================================
+
+"""Program 1.21: Armstrong number checker and finder."""
+def is_armstrong(number):
+    digits = str(number)
+    return number == sum(int(digit) ** len(digits) for digit in digits)
+
+number = int(input("Enter a number: "))
+if is_armstrong(number):
+    print(number, "is an Armstrong number.")
+else:
+    print(number, "is not an Armstrong number.")
+print("Armstrong numbers from 1 to 999:")
+print(*[n for n in range(1, 1000) if is_armstrong(n)])
+'''
+Enter a number: 12
+12 is not an Armstrong number.
+Armstrong numbers from 1 to 999:
+1 2 3 4 5 6 7 8 9 153 370 371 407
+'''
+=====================================================
+
+"""Program 1.22: ATM PIN simulator."""
+correct_pin = "1234"
+attempts = 0
+while attempts < 3:
+    pin = input("Enter your 4-digit PIN: ")
+    if pin == correct_pin:
+        print("Access Granted")
+        break
+    attempts += 1
+    print("Incorrect PIN")
+else:
+    print("Card Blocked")
+'''
+Enter your 4-digit PIN: 1234
+Access Granted
+'''
+======================================================
+
+"""Program 1.23: sums of natural numbers, squares and cubes."""
+number = int(input("Enter N: "))
+natural = squares = cubes = 0
+for value in range(1, number + 1):
+    natural += value
+    squares += value ** 2
+    cubes += value ** 3
+print("Natural number sum:", natural)
+print("Square sum:", squares)
+print("Cube sum:", cubes)
+'''
+Enter N: 5
+Natural number sum: 15
+Square sum: 55
+Cube sum: 225
+'''
+=====================================================
+
+"""Program 1.24: ascending and descending number patterns."""
+for row in range(1, 6):
+    for number in range(1, row + 1): print(number, end=" ")
+    print()
+print("Reverse pattern")
+for row in range(5, 0, -1):
+    for number in range(1, row + 1): print(number, end=" ")
+    print()
+'''
+1 
+1 2 
+1 2 3 
+1 2 3 4 
+1 2 3 4 5 
+Reverse pattern
+1 2 3 4 5 
+1 2 3 4 
+1 2 3 
+1 2 
+1 
+'''
+=======================================================
+
+"""Program 2.1: basic functions."""
+def greet(name): print("Hello, " + name + "!")
+def square(number): return number ** 2
+def cube(number): return number ** 3
+
+for name, number in [("Aarav", 2), ("Diya", 3), ("Kunal", 4)]:
+    greet(name)
+    print("Square of", number, ":", square(number))
+    print("Cube of", number, ":", cube(number))
+'''
+Hello, Aarav!
+Square of 2 : 4
+Cube of 2 : 8
+Hello, Diya!
+Square of 3 : 9
+Cube of 3 : 27
+Hello, Kunal!
+Square of 4 : 16
+Cube of 4 : 64
+'''
+=========================================================
+
+"""Program 1.22: ATM PIN simulator."""
+correct_pin = "1234"
+attempts = 0
+while attempts < 3:
+    pin = input("Enter your 4-digit PIN: ")
+    if pin == correct_pin:
+        print("Access Granted")
+        break
+    attempts += 1
+    print("Incorrect PIN")
+else:
+    print("Card Blocked")
+'''
+Enter your 4-digit PIN: 1234
+Access Granted
+'''
+=============================================
+
+"""Program 2.2: prime checker function."""
+def is_prime(number):
+    if number < 2: return False
+    for divisor in range(2, int(number ** 0.5) + 1):
+        if number % divisor == 0: return False
+    return True
+
+roll_no = int(input("Enter 57: "))
+for number in range(roll_no, roll_no + 11):
+    print(number, ":", "Prime" if is_prime(number) else "Not prime")
+'''
+Enter 57: 2
+2 : Prime
+3 : Prime
+4 : Not prime
+5 : Prime
+6 : Not prime
+7 : Prime
+8 : Not prime
+9 : Not prime
+10 : Not prime
+11 : Prime
+12 : Not prime
+'''
+==================================================
+
+"""Program 2.3: factorial table using a function."""
+def factorial(number):
+    result = 1
+    for value in range(2, number + 1): result *= value
+    return result
+
+print("Number  Factorial")
+for number in range(1, 11): print(number, "=", factorial(number))
+'''
+Number  Factorial
+1 = 1
+2 = 2
+3 = 6
+4 = 24
+5 = 120
+6 = 720
+7 = 5040
+8 = 40320
+9 = 362880
+10 = 3628800
+'''
+==================================================
+
+"""Program 2.4: multi-return statistics function."""
+def stats(a, b, c):
+    return a + b + c, (a + b + c) / 3, min(a, b, c), max(a, b, c)
+
+values = [float(input("Enter number " + str(i) + ": ")) for i in range(1, 4)]
+total, average, minimum, maximum = stats(*values)
+print("Sum:", total)
+print("Average:", round(average, 2))
+print("Minimum:", minimum)
+print("Maximum:", maximum)
+'''
+Enter number 1: 12
+Enter number 2: 17
+Enter number 3: 54
+Sum: 83.0
+Average: 27.67
+Minimum: 12.0
+Maximum: 54.0
+'''
+==================================================
+
+"""Program 2.5: reverse strings and check palindromes."""
+def reverse_string(text): return text[::-1]
+def is_palindrome(text): return text.lower() == reverse_string(text).lower()
+
+samples = ["madam", "racecar", "Khrumil", "Your City"]
+for text in samples:
+    print(text, ": reverse =", reverse_string(text), ", palindrome =", is_palindrome(text))
+'''
+madam : reverse = madam , palindrome = True
+racecar : reverse = racecar , palindrome = True
+Khrumil : reverse = emaN ruoY , palindrome = False
+Your City : reverse = ytiC ruoY , palindrome = False
+'''
+======================================================
+
+"""Program 2.6: vowel and character frequency functions."""
+def count_vowels(text): return sum(char.lower() in "aeiou" for char in text)
+def char_frequency(text):
+    counts = {}
+    for char in text: counts[char] = counts.get(char, 0) + 1
+    return counts
+
+sentence = input("Enter a sentence: ")
+print("Vowels:", count_vowels(sentence))
+print("Character frequency:", char_frequency(sentence))
+'''
+Enter a sentence: how are you?
+Vowels: 5
+Character frequency: {'h': 1, 'o': 2, 'w': 1, ' ': 2, 'a': 1, 'r': 1, 'e': 1, 'y': 1, 'u': 1, '?': 1}
+'''
+========================================================
+
+"""Program 2.7: menu-driven modular calculator."""
+def add(a, b): return a + b
+def subtract(a, b): return a - b
+def multiply(a, b): return a * b
+def divide(a, b): return a / b
+def power(a, b): return a ** b
+
+operations = {"1": ("Add", add), "2": ("Subtract", subtract), "3": ("Multiply", multiply), "4": ("Divide", divide), "5": ("Power", power)}
+for key, (name, _) in operations.items(): print(key + ".", name)
+choice = input("Choose an operation: ")
+if choice in operations:
+    a, b = float(input("First number: ")), float(input("Second number: "))
+    try: print("Result:", operations[choice][1](a, b))
+    except ZeroDivisionError: print("Cannot divide by zero.")
+else: print("Invalid choice.")
+'''
+1. Add
+2. Subtract
+3. Multiply
+4. Divide
+5. Power
+Choose an operation: 1
+First number: 1
+Second number: 2
+Result: 3.0
+'''
+============================================================
+
+"""Program 2.8: common string methods."""
+sentence = input("Enter a sentence: ")
+print("Upper:", sentence.upper())
+print("Lower:", sentence.lower())
+print("Title:", sentence.title())
+print("Stripped:", sentence.strip())
+print("Words:", sentence.split())
+print("Underscores:", sentence.replace(" ", "_"))
+print("First 'a':", sentence.find("a"))
+'''
+Enter a sentence: khrumil
+Upper: KHRUMIL
+Lower: khrumil
+Title: Khrumil
+Stripped: khrumil
+Words: ['khrumil']
+Underscores: khrumil
+First 'a': 1
+'''
+=============================================================
+
+"""Program 2.9: anagram checker."""
+def is_anagram(first, second):
+    return sorted(first.replace(" ", "").lower()) == sorted(second.replace(" ", "").lower())
+
+pairs = [("listen", "silent"), ("earth", "heart"), ("python", "typhon"), ("hello", "world")]
+for first, second in pairs: print(first + ",", second + ":", is_anagram(first, second))
+'''
+listen, silent: True
+earth, heart: True
+python, typhon: True
+hello, world: False
+'''
+==============================================================
+
+"""Program 2.10: formatted report card using f-strings."""
+student_name, roll_no = "Khrumil", "57"
+marks = [85, 78, 92, 88, 81]
+total, percentage = sum(marks), sum(marks) / 5
+grade = "A+" if percentage >= 90 else "A" if percentage >= 80 else "B" if percentage >= 70 else "C" if percentage >= 60 else "D" if percentage >= 35 else "Fail"
+print(f"{'REPORT CARD':^34}\n{'Name:':15}{student_name}\n{'Roll No.:':15}{roll_no}\n{'Marks:':15}{marks}\n{'Total:':15}{total}/500\n{'Percentage:':15}{percentage:.2f}%\n{'Grade:':15}{grade}")
+'''
+           REPORT CARD            
+Name:          Khrumil
+Roll No.:      57
+Marks:         [85, 78, 92, 88, 81]
+Total:         424/500
+Percentage:    84.80%
+Grade:         A
+'''
+=================================================================
+
+"""Program 2.11: function with default parameters."""
+def display_info(name, city="Ahmedabad", programme="M.Sc. IT"):
+    print("Name:", name, "City:", city, "Programme:", programme)
+
+display_info("Riya", "Surat", "MCA")
+display_info("Aman")
+display_info("Neha", "Vadodara")
+'''
+Name: Riya City: Surat Programme: MCA
+Name: Aman City: Ahmedabad Programme: M.Sc. IT
+Name: Neha City: Vadodara Programme: M.Sc. IT
+'''
+============================================================
+
+"""Program 2.12: sort and filter student records."""
+students = [("Aarav", 82), ("Diya", 55), ("Kabir", 91), ("Meera", 67), ("Rohan", 48)]
+sorted_students = sorted(students, key=lambda student: student[1], reverse=True)
+passed_students = list(filter(lambda student: student[1] >= 60, students))
+print("Sorted by marks:", sorted_students)
+print("Marks >= 60:", passed_students)
+'''
+Sorted by marks: [('Kabir', 91), ('Aarav', 82), ('Meera', 67), ('Diya', 55), ('Rohan', 48)]
+Marks >= 60: [('Aarav', 82), ('Kabir', 91), ('Meera', 67)]
+'''
+===============================================
+
+"""Program 3.1: list statistics."""
+count = int(input("How many numbers? "))
+numbers = [float(input("Number " + str(i) + ": ")) for i in range(1, count + 1)]
+if numbers:
+    print("List:", numbers)
+    print("Sorted:", sorted(numbers))
+    print("Reversed:", list(reversed(numbers)))
+    print("Max:", max(numbers))
+    print("Min:", min(numbers))
+    print("Sum:", sum(numbers))
+    print("Average:", round(sum(numbers) / len(numbers), 2))
+else: print("No numbers entered.")
+'''
+How many numbers? 3
+Number 1: 11
+Number 2: 22
+Number 3: 33
+List: [11.0, 22.0, 33.0]
+Sorted: [11.0, 22.0, 33.0]
+Reversed: [33.0, 22.0, 11.0]
+Max: 33.0
+Min: 11.0
+Sum: 66.0
+Average: 22.0
+'''
+==============================================
+
+"""Program 3.2: stack using a list."""
+stack = []
+def push(item): stack.append(item)
+def pop(): return stack.pop() if stack else "Stack is empty"
+def peek(): return stack[-1] if stack else "Stack is empty"
+def is_empty(): return not stack
+def display(): print("Stack:", stack)
+
+for item in [10, 20, 30, 40, 50]: push(item)
+display()
+print("Peek:", peek())
+print("Popped:", pop(), pop())
+display()
+print("Is empty:", is_empty())
+'''
+Stack: [10, 20, 30, 40, 50]
+Peek: 50
+Popped: 50 40
+Stack: [10, 20, 30]
+Is empty: False
+'''
+=================================================
+
+"""Program 3.3: list comprehension examples."""
+sentence = "Python makes programming simple and enjoyable"
+print("Squares:", [number ** 2 for number in range(1, 21)])
+print("Even numbers:", [number for number in range(1, 51) if number % 2 == 0])
+print("Long words:", [word for word in sentence.split() if len(word) > 4])
+print("Odd cubes:", [number ** 3 for number in range(1, 16) if number % 2 != 0])
+'''
+Squares: [1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, 361, 400]
+Even numbers: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50]
+Long words: ['Python', 'makes', 'programming', 'simple', 'enjoyable']
+Odd cubes: [1, 27, 125, 343, 729, 1331, 2197, 3375]
+'''
+===============================================
+
+"""Program 3.4: tuple operations."""
+marks = (72, 85, 91, 68, 79)
+print("Marks:", marks)
+print("First mark:", marks[0])
+print("Slice 1:4:", marks[1:4])
+print("Length:", len(marks))
+minimum, maximum, average = min(marks), max(marks), sum(marks) / len(marks)
+print("Min:", minimum, "Max:", maximum, "Average:", round(average, 2))
+try: marks[0] = 100
+except TypeError as error: print("Tuple cannot be modified:", error)
+updated_marks = list(marks)
+updated_marks[0] = 100
+marks = tuple(updated_marks)
+print("Updated tuple:", marks)
+'''
+Marks: (72, 85, 91, 68, 79)
+First mark: 72
+Slice 1:4: (85, 91, 68)
+Length: 5
+Min: 68 Max: 91 Average: 79.0
+Tuple cannot be modified: 'tuple' object does not support item assignment
+Updated tuple: (100, 85, 91, 68, 79)
+'''
+============================================================
+
+"""Program 3.5: dictionary-based phone book."""
+phone_book = {"Aarav": "9876543210", "Diya": "9876543211", "Kabir": "9876543212", "Meera": "9876543213", "Rohan": "9876543214"}
+name = input("Search contact name: ")
+print("Number:", phone_book.get(name, "Contact not found"))
+phone_book["Diya"] = "9999999999"
+removed = phone_book.pop("Rohan")
+print("Updated Diya number and removed Rohan:", removed)
+for contact in sorted(phone_book): print(contact + ":", phone_book[contact])
+'''Search contact name: hepi
+Number: Contact not found
+Updated Diya number and removed Rohan: 9876543214
+Aarav: 9876543210
+Diya: 9999999999
+Kabir: 9876543212
+Meera: 9876543213
+'''
+========================================================
+
+"""Program 3.6: count words by frequency."""
+paragraph = input("Enter a paragraph: ").lower()
+counts = {}
+for word in paragraph.replace(".", "").replace(",", "").split(): counts[word] = counts.get(word, 0) + 1
+for word, count in sorted(counts.items(), key=lambda item: item[1], reverse=True): print(word + ":", count)
+'''Enter a paragraph: hello,how are you?
+hellohow: 1
+are: 1
+you?: 1'''
+===========================================================
+
+"""Program 3.7: set operations."""
+odd_numbers = set(range(1, 16, 2))
+multiples_of_three = set(range(3, 16, 3))
+print("Odd numbers:", odd_numbers)
+print("Multiples of 3:", multiples_of_three)
+print("Union:", odd_numbers | multiples_of_three)
+print("Intersection:", odd_numbers & multiples_of_three)
+print("Odd - multiples:", odd_numbers - multiples_of_three)
+print("Multiples - odd:", multiples_of_three - odd_numbers)
+print("Symmetric difference:", odd_numbers ^ multiples_of_three)
+'''Odd numbers: {1, 3, 5, 7, 9, 11, 13, 15}
+Multiples of 3: {3, 6, 9, 12, 15}
+Union: {1, 3, 5, 6, 7, 9, 11, 12, 13, 15}
+Intersection: {9, 3, 15}
+Odd - multiples: {1, 5, 7, 11, 13}
+Multiples - odd: {12, 6}
+Symmetric difference: {1, 5, 6, 7, 11, 12, 13}'''
+===========================================================
+
+"""Program 3.8: 3x3 matrix operations."""
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+print("Matrix:")
+for row in matrix: print(*row, sep="\t")
+for index, row in enumerate(matrix, 1): print("Row", index, "sum:", sum(row))
+print("Main diagonal sum:", sum(matrix[i][i] for i in range(3)))
+'''Matrix:
+1       2       3
+4       5       6
+7       8       9
+Row 1 sum: 6
+Row 2 sum: 15
+Row 3 sum: 24
+Main diagonal sum: 15'''
+===========================================================
+
+"""Program 3.9: student gradebook."""
+gradebook = {"Aarav": [85, 80, 90], "Diya": [72, 78, 75], "Kabir": [95, 92, 96], "Meera": [88, 84, 86]}
+averages = {name: sum(marks) / len(marks) for name, marks in gradebook.items()}
+for name, average in sorted(averages.items(), key=lambda item: item[1], reverse=True): print(name + ":", round(average, 2))
+top_student = max(averages, key=averages.get)
+print("Top student:", top_student, "(" + str(round(averages[top_student], 2)) + ")")
+'''Kabir: 94.33
+Meera: 86.0
+Aarav: 85.0
+Diya: 75.0
+Top student: Kabir (94.33)'''
+============================================================
+
+"""Program 3.10: remove duplicates and compare lists."""
+count = int(input("How many numbers in list 1? "))
+list_one = [int(input("Number " + str(i) + ": ")) for i in range(1, count + 1)]
+list_two = [int(value) for value in input("Enter list 2 numbers separated by spaces: ").split()]
+frequency = {}
+for number in list_one: frequency[number] = frequency.get(number, 0) + 1
+print("Without duplicates:", list(set(list_one)))
+print("Only in list 1:", list(set(list_one) - set(list_two)))
+print("Frequency:", frequency)
+'''How many numbers in list 1? 5
+Number 1: 1
+Number 2: 2
+Number 3: 3
+Number 4: 4
+Number 5: 5
+Enter list 2 numbers separated by spaces: 1 2
+Without duplicates: [1, 2, 3, 4, 5]
+Only in list 1: [3, 4, 5]
+Frequency: {1: 1, 2: 1, 3: 1, 4: 1, 5: 1}'''
+
+=============================================================
+
+"""Program 3.11: simple inventory using functions."""
+inventory = {"pen": 10, "notebook": 3, "eraser": 6}
+def add_item(name, quantity): inventory[name] = inventory.get(name, 0) + quantity
+def remove_item(name): return inventory.pop(name, "Item not found")
+def update_qty(name, quantity): inventory[name] = quantity
+def display_inventory():
+    for name, quantity in sorted(inventory.items()): print(name + ":", quantity)
+def low_stock(): return {name: qty for name, qty in inventory.items() if qty < 5}
+
+add_item("pencil", 4)
+update_qty("pen", 8)
+remove_item("eraser")
+display_inventory()
+print("Low stock:", low_stock())
+'''notebook: 3
+pen: 8
+pencil: 4
+Low stock: {'notebook': 3, 'pencil': 4}'''
+=================================================
+
+"""Program 3.12: to-do list with ordered tasks and unique tags."""
+tasks = []
+def add_task(task, tags): tasks.append({"task": task, "tags": set(tags)})
+def display_all():
+    for index, item in enumerate(tasks, 1): print(str(index) + ".", item["task"], "-", ", ".join(sorted(item["tags"])))
+def find_by_tag(tag): return [item["task"] for item in tasks if tag in item["tags"]]
+
+add_task("Complete Python practical", ["study", "python"])
+add_task("Buy notebook", ["personal", "shopping"])
+add_task("Revise functions", ["study", "python"])
+display_all()
+print("Tasks tagged 'study':", find_by_tag("study"))
+'''1. Complete Python practical - python, study
+2. Buy notebook - personal, shopping
+3. Revise functions - python, study
+Tasks tagged 'study': ['Complete Python practical', 'Revise functions']'''
+===================================================
+
+49:append insert remove
+
+numbers = [10, 20, 30, 40]
+
+print("Original List:", numbers)
+
+numbers.append(50)
+
+print("After Append:", numbers)
+
+numbers.insert(2, 25)
+
+print("After Insert:", numbers)
+
+numbers.remove(30)
+
+print("After Remove:", numbers)
+
+'''
+Original List: [10, 20, 30, 40]
+After Append: [10, 20, 30, 40, 50]
+After Insert: [10, 20, 25, 30, 40, 50]
+After Remove: [10, 20, 25, 40, 50]
+'''
+===================================================
+50:avg of a number in list
+
+numbers = [10, 20, 30, 40, 60, 99, 1, 50]
+
+average = sum(numbers) / len(numbers)
+
+print("Average =", average)
+'''
+Average = 38.75
+'''
+==================================================
+51:check element if it exsist or not
+
+numbers = [10, 20, 30, 40, 50, 601, 42, 32, 67]
+
+value = int(input("Enter number: "))
+
+if value in numbers:
+    print("Element Found")
+else:
+    print("Element Not Found")
+'''
+Enter number: 44
+Element Not Found
+'''
+====================================================
+52:common no in list
+
+list1 = [15, 27, 43, 68]
+list2 = [43, 68, 91, 24]
+
+common = []
+
+for i in list1:
+    if i in list2:
+        common.append(i)
+
+print("Common Elements:", common)
+'''
+Common Elements: [43, 68]
+'''
+========================================================
+53:count element how many times it appears
+numbers = [10, 20, 30, 20, 40, 20, 50]
+
+value = int(input("Enter number: "))
+
+count = numbers.count(value)
+
+print(value, "appears", count, "times")
+'''
+Enter number: 80
+80 appears 0 times
+'''
+===================================================
+54:first-middle-last element
+numbers = [10, 20, 30, 40, 50, 60, 70]
+
+first = numbers[0]
+last = numbers[-1]
+middle = numbers[len(numbers) // 2]
+
+print("First element :", first)
+print("Middle element:", middle)
+print("Last element  :", last)
+'''
+First element : 10
+Middle element: 40
+Last element  : 70
+'''
+=====================================================
+55:length of list
+numbers = [10, 20, 30, 40, 50, 60, 80, 120, 47, 43, 54, 57, 69]
+
+length = len(numbers)
+
+print("Length of list =", length)
+'''
+Length of list = 13
+'''
+=======================================================
+56:list of number
+
+numbers = [1011, 2110, 30, 460, 450, 260, 702, 807, 940, 100]
+
+
+print("List of numbers:")
+print(numbers)
+'''
+List of numbers:
+[1011, 2110, 30, 460, 450, 260, 702, 807, 940, 100]
+'''
+=========================================================
+57:max and min
+numbers = [25, 10, 45, 5, 30]
+
+maximum = numbers[0]
+minimum = numbers[0]
+
+for num in numbers:
+    if num > maximum:
+        maximum = num
+
+    if num < minimum:
+        minimum = num
+
+print("Maximum =", maximum)
+print("Minimum =", minimum)
+'''
+Maximum = 45
+Minimum = 5
+'''
+==================================================
+58:merge list
+list1 = ["Dev", "vatsal", "manav"]
+list2 = ["dhaval", "yash", "Pooja"]
+
+merged = list1 + list2
+
+print("Merged List:", merged)
+'''
+Merged List: ['Dev', 'vatsal', 'manav', 'dhaval', 'yash', 'Pooja']
+'''
+==================================================
+59:no common in list
+list1 = [18, 35, 47, 62]
+list2 = [35, 51, 78, 90]
+
+difference = []
+difference1 = []
+
+for i in list1:
+    if i not in list2:
+        difference.append(i)
+
+for i in list2:
+    if i not in list1:
+        difference1.append(i)
+print("Elements only in List1:", difference)
+print("Elements only in List1:", difference1)
+
+print("----------------------------------------------")
+print("                    OR                        ")
+print("----------------------------------------------")
+
+list1 = [18, 35, 47, 62]
+list2 = [35, 51, 78, 90]
+difference = []
+for i in list1:
+    if i not in list2:
+        difference.append(i)
+
+print("Elements only in List1:", difference)
+'''
+Elements only in List1: [18, 47, 62]
+Elements only in List1: [51, 78, 90]
+----------------------------------------------
+                    OR                        
+----------------------------------------------
+Elements only in List1: [18, 47, 62]
+'''
+========================================================
+60:reverse list without using reverse
+numbers = [10123, 2022, 301, 401, 540]
+
+reversed_list = numbers[::-1]
+
+print("Original List :", numbers)
+print("Reversed List:", reversed_list)
+'''
+Original List : [10123, 2022, 301, 401, 540]
+Reversed List: [540, 401, 301, 2022, 10123]
+'''
+===========================================================
+61:second largest and second smallest
+numbers = [23, 58, 14, 91, 37]
+numbers.sort()
+print("Second Smallest =", numbers[1])
+print("Second Largest =", numbers[-2])
+'''
+Second Smallest = 23
+Second Largest = 58
+'''
+==========================================================
+62:shallow copy
+list1 = ["Dev", "Maahi", "Dhruv"]
+
+list2 = list1.copy()
+
+list2.append("Pooja")
+
+print("Original List:", list1)
+print("Copied List:", list2)
+'''
+Original List: ['Dev', 'Maahi', 'Dhruv']
+Copied List: ['Dev', 'Maahi', 'Dhruv', 'Pooja']
+'''
+========================================================
+63:sum of all element in the list
+numbers = [10, 20, 30, 40, 50, 120, 340, 200]
+
+total = sum(numbers)
+print(numbers)
+print("Sum =", total)
+'''
+[10, 20, 30, 40, 50, 120, 340, 200]
+Sum = 810
+'''
+======================================================
+64:function math-menu
+def add(a, b):
+    return a + b
+
+def subtract(a, b):
+    return a - b
+
+def multiply(a, b):
+    return a * b
+
+def divide(a, b):
+    return a / b
+
+def floor_divide(a, b):
+    return a // b
+
+def power(a, b):
+    return a ** b
+operations = {'1': add, '2': subtract, '3': multiply, '4': divide, '5': floor_divide, '6': power}
+print('1 Add  2 Subtract  3 Multiply  4 Divide  5 Integer Divide  6 Power')
+choice = input('Choose: ')
+a = float(input('First number: '))
+b = float(input('Second number: '))
+if choice in operations:
+    try:
+        print('Result:', operations[choice](a, b))
+    except ZeroDivisionError:
+        print('Cannot divide by zero.')
+else:
+    print('Invalid choice.')
+'''
+1 Add  2 Subtract  3 Multiply  4 Divide  5 Integer Divide  6 Power
+Choose: 3
+First number: 45
+Second number: 12
+Result: 540.0
+'''
+==================================================================
+65:area_calculators
+from math import pi
+
+def rectangle_area(width, length):
+    return width * length
+
+def triangle_area(height, base):
+    return 0.5 * height * base
+
+def circle_area(radius):
+    return pi * radius * radius
+print('Rectangle:', rectangle_area(5, 8))
+print('Triangle:', triangle_area(4, 6))
+print('Circle:', round(circle_area(3), 2))
+'''
+Rectangle: 40
+Triangle: 12.0
+Circle: 28.27
+'''
+======================================================
+66:number system
+def to_binary(number):
+    return bin(number)[2:]
+
+def to_octal(number):
+    return oct(number)[2:]
+
+def to_hexadecimal(number):
+    return hex(number)[2:].upper()
+number = int(input('Enter a decimal number: '))
+print('Binary:', to_binary(number))
+print('Octal:', to_octal(number))
+print('Hexadecimal:', to_hexadecimal(number))
+'''
+Enter a decimal number: 55
+Binary: 110111
+Octal: 67
+Hexadecimal: 37
+'''
+========================================================
+67:unique values
+def unique_values(numbers):
+    result = []
+    for number in numbers:
+        if number not in result:
+            result.append(number)
+    return result
+sample = [1, 2, 3, 3, 3, 3, 4, 5]
+print(unique_values(sample))
+'''
+[1, 2, 3, 4, 5]
+'''
+========================================================
+68:multiply list
+def multiply_numbers(numbers):
+    product = 1
+    for number in numbers:
+        product *= number
+    return product
+numbers = [2, 3, 4, 5]
+print('Product:', multiply_numbers(numbers))
+'''
+Product: 120
+'''
+=======================================================
+69:number in range
+def in_range(number, start, end):
+    return start <= number <= end
+number = int(input('Enter number: '))
+start = int(input('Enter range start: '))
+end = int(input('Enter range end: '))
+print(in_range(number, start, end))
+'''
+Enter number: 40
+Enter range start: 20
+Enter range end: 60
+True
+'''
+=======================================================
+70:upper-lower-count
+def count_case(text):
+    upper = 0
+    lower = 0
+    for character in text:
+        if character.isupper():
+            upper += 1
+        elif character.islower():
+            lower += 1
+    return (upper, lower)
+text = input('Enter text: ')
+upper, lower = count_case(text)
+print('Uppercase:', upper)
+print('Lowercase:', lower)
+'''
+Enter text: heLLo world
+Uppercase: 2
+Lowercase: 8
+'''
+==================================================================
+71:prime_ckecker_range
+def is_prime(number):
+    if number < 2:
+        return False
+    for divisor in range(2, number):
+        if number % divisor == 0:
+            return False
+    return True
+number = int(input('Enter number: '))
+print('Prime:' if is_prime(number) else 'Not prime:', number)
+start = int(input('Range start: '))
+end = int(input('Range end: '))
+print([value for value in range(start, end + 1) if is_prime(value)])
+'''
+Enter number: 75
+Not prime: 75
+Range start: 40
+Range end: 50
+[41, 43, 47]
+'''
+==================================================================
+72:factorial
+def factorial(number):
+    result = 1
+    for value in range(2, number + 1):
+        result *= value
+    return result
+number = int(input('Enter a non-negative number: '))
+if number >= 0:
+    print('Factorial:', factorial(number))
+else:
+    print('Factorial is not defined for negative numbers.')
+'''
+Enter a non-negative number: 40
+Factorial: 815915283247897734345611269596115894272000000000
+'''
+=================================================================
+73:type-operations
+def perform_operations(first, second):
+    if type(first) == int and type(second) == int:
+        return (first + second, first * second)
+    return (str(first) + str(second), str(first) * int(second) if str(second).isdigit() else 'Cannot multiply')
+first = input('Enter first value: ')
+second = input('Enter second value: ')
+if first.isdigit() and second.isdigit():
+    first = int(first)
+    second = int(second)
+print(perform_operations(first, second))
+'''
+Enter first value: 20
+Enter second value: 40
+(60, 800)
+'''
+====================================================================
+74:find string
+def find_string(string1, string2='all'):
+    positions = []
+    start = 0
+    while True:
+        position = string1.find(string2, start)
+        if position == -1:
+            break
+        positions.append(position + 1)
+        start = position + 1
+    return positions
+text = 'Hello all, Good Morning to all.'
+word = input('Enter word (press Enter for all): ') or 'all'
+positions = find_string(text, word)
+print('Positions:' if positions else 'String not found.', positions)
+'''
+Enter word (press Enter for all): python
+String not found. []
+'''
+=======================================================
+
+75:fruit-operation
+fruits = ['Apple', 'Banana', 'Mango']
+
+def add_fruit(name):
+    fruits.append(name)
+
+def insert_fruit(name, position=1):
+    fruits.insert(position, name)
+
+def update_fruit(old_name, new_name):
+    if old_name in fruits:
+        fruits[fruits.index(old_name)] = new_name
+
+def remove_fruit(value):
+    if isinstance(value, int):
+        fruits.pop(value)
+    elif value in fruits:
+        fruits.remove(value)
+
+def arrange_fruits():
+    fruits.sort()
+add_fruit('Orange')
+insert_fruit('Grapes')
+update_fruit(old_name='Banana', new_name='Kiwi')
+remove_fruit('Mango')
+arrange_fruits()
+print('Global variables:', list(globals().keys()))
+print(fruits)
+'''
+Global variables: ['__name__', '__doc__', '__package__', '__loader__', '__spec__', '__builtins__', '__file__', '__cached__', 'fruits', 'add_fruit', 'insert_fruit', 'update_fruit', 'remove_fruit', 'arrange_fruits']
+['Apple', 'Grapes', 'Kiwi', 'Orange']
+'''
+===========================================================
+76:generate primes
+def generate_primes(count):
+    primes = []
+    number = 2
+    while len(primes) < count:
+        prime = True
+        for divisor in range(2, number):
+            if number % divisor == 0:
+                prime = False
+                break
+        if prime:
+            primes.append(number)
+        number += 1
+    return primes
+count = int(input('How many prime numbers? '))
+print(generate_primes(count))
+'''
+How many prime numbers? 2
+[2, 3]
+'''
+=========================================================
+77:mobile_dictionary
+mobiles = {}
+
+def create():
+    global mobiles
+    mobiles = {'Nokia': {'price': 5000, 'features': ['4G', 'Camera']}}
+
+def add_mobile(name, price, features):
+    mobiles[name] = {'price': price, 'features': features}
+
+def update_mobile(name, price):
+    if name in mobiles:
+        mobiles[name]['price'] = price
+
+def delete_mobile(name):
+    if name in mobiles:
+        del mobiles[name]
+create()
+add_mobile('Samsung', 18000, ['5G', 'AMOLED'])
+update_mobile('Nokia', 5500)
+delete_mobile('Samsung')
+print(mobiles)
+'''
+{'Nokia': {'price': 5500, 'features': ['4G', 'Camera']}}
+'''
+=============================================================
+78:lambda-max-two
+maximum = lambda first, second: first if first > second else second
+print(maximum(25, 18))
+'''
+25
+'''
+===========================================================
+79:lambda-max-three
+maximum = lambda first, second, third: first if first >= second and first >= third else second if second >= third else third
+print(maximum(14, 27, 19))
+'''
+27
+'''
+===========================================================
+80:lambda-even-odd
+change_number = lambda number: number * 5 if number % 2 == 0 else number * 10
+number = int(input('Enter number: '))
+print(change_number(number))
+'''
+Enter number: 50
+250
+'''
+=================================================================
+81:filter-integers
+items = [10, 'Python', 20, 'List', 30.5, 40]
+integers = list(filter(lambda item: type(item) == int, items))
+print(integers)
+'''
+[10, 20, 40]
+'''
+===============================================================
+82:filter-strings-vowls
+items = [10, 'Python', 'Apple', 20, 'Orange', 'List']
+strings = list(filter(lambda item: type(item) == str, items))
+text = 'Hello Python World'
+without_vowels = ''.join(filter(lambda character: character.lower() not in 'aeiou', text))
+print('Strings:', strings)
+print('Without vowels:', without_vowels)
+'''
+Strings: ['Python', 'Apple', 'Orange', 'List']
+Without vowels: Hll Pythn Wrld
+'''
+===============================================================
+83:filter-even-odd
+numbers = [1, 2, 3, 4, 5, 6, 7, 8]
+even = list(filter(lambda number: number % 2 == 0, numbers))
+odd = list(filter(lambda number: number % 2 != 0, numbers))
+print('Even:', even)
+print('Odd:', odd)
+'''
+Even: [2, 4, 6, 8]
+Odd: [1, 3, 5, 7]
+'''
+===============================================================
+84:lambda-product-concat
+combine = lambda first, second: first * second if type(first) == int and type(second) == int else str(first) + str(second)
+print(combine(4, 5))
+print(combine('Hello ', 'Python'))
+'''
+20
+Hello Python
+'''
+==============================================================
+85:filter-palindrome-words
+words = ['madam', 'python', 'racecar', 'apple', 'level']
+palindromes = list(filter(lambda word: word == word[::-1], words))
+print(palindromes)
+'''
+['madam', 'racecar', 'level']
+'''
+============================================================
+86:sort-fruit-tuples
+fruits = [(120, 'Apple'), (20, 'Banana'), (50, 'Chikoo'), (100, 'Pineapple')]
+sorted_fruits = sorted(fruits, key=lambda fruit: fruit[0])
+print(sorted_fruits)
+'''
+[(20, 'Banana'), (50, 'Chikoo'), (100, 'Pineapple'), (120, 'Apple')]
+'''
+==========================================================
+87:filter-short-names
+students = ['Amit', 'Bhavna', 'Khrumil', 'Kiran', 'Rohit']
+result = list(filter(lambda name: len(name) < 6, students))
+print(result)
+'''
+['Amit', 'Khrumil', 'Kiran', 'Rohit']
+'''
+==========================================================
+88:filter-empty-string
+words = ['Python', '', 'List', '', 'Function']
+result = list(filter(lambda word: word != '', words))
+print(result)
+'''
+['Python', 'List', 'Function']
+'''
+===========================================================
+89:filter-negative-numbers
+numbers = [-5, 2, -1, 0, 7, -9]
+result = list(filter(lambda number: number >= 0, numbers))
+print(result)
+'''
+[2, 0, 7]
+'''
+==========================================================
+90:filter-duplicate-numbers
+numbers = [1, 2, 2, 3, 4, 4, 5]
+result = list(filter(lambda number: numbers.count(number) == 1, numbers))
+print(result)
+'''
+[1, 3, 5]
+'''
+===========================================================
+91:sort-student-by-age-name
+students = [{'name': 'Amit', 'age': 25}, {'name': 'Bina', 'age': 22}, {'name': 'Khrumil', 'age': 25}]
+result = sorted(students, key=lambda student: (student['age'], student['name']))
+print(result)
+'''
+[{'name': 'Bina', 'age': 22}, {'name': 'Amit', 'age': 25}, {'name': 'Khrumil', 'age': 25}]
+'''
+=============================================================
+92:lambda-average
+average = lambda *numbers: sum(numbers) / len(numbers)
+print(average(10, 20, 30, 40))
+'''
+25.0
+'''
+==============================================================
+93:add-or-difference
+first = [6, 5, 3, 9]
+second = [0, 1, 7, 7]
+result = list(map(lambda pair: pair[0] + pair[1] if pair[0] > pair[1] else pair[1] - pair[0], zip(first, second)))
+print(result)
+'''
+[6, 6, 4, 16]
+'''
+==============================================================
+94:map-uppercase-names
+names = ['Amit', 'Bina', 'Khrumil', 'Kiran']
+uppercase_names = list(map(lambda name: name.upper(), names))
+print(uppercase_names)
+'''
+['AMIT', 'BINA', 'KHRUMIL', 'KIRAN']
+'''
+===============================================================
+95:map-round-numbers
+numbers = [6.56773, 9.57668, 4.00914, 56.24241, 9.01344]
+whole_numbers = list(map(lambda number: round(number), numbers))
+two_decimals = list(map(lambda number: round(number, 2), numbers))
+print('Whole numbers:', whole_numbers)
+print('Two decimals:', two_decimals)
+'''
+Whole numbers: [7, 10, 4, 56, 9]
+Two decimals: [6.57, 9.58, 4.01, 56.24, 9.01]
+'''
+==============================================================
+96:map-string-analysis
+def analyze_word(word):
+    vowels = []
+    for vowel in 'aeiou':
+        count = word.lower().count(vowel)
+        if count > 0:
+            vowels.append({vowel: count})
+    return {word.upper(): vowels, 'length': len(word)}
+sentence = input('Enter a sentence: ')
+analysis = list(map(analyze_word, sentence.split()))
+print(analysis)
+'''
+Enter a sentence: i am a bscit student
+[{'I': [{'i': 1}], 'length': 1}, {'AM': [{'a': 1}], 'length': 2}, {'A': [{'a': 1}], 'length': 1}, {'BSCIT': [{'i': 1}], 'length': 5}, {'STUDENT': [{'e': 1}, {'u': 1}], 'length': 7}]
+'''
+=================================================================
+97:map-squares
+numbers = [1, 2, 3, 4, 5]
+squares = list(map(lambda number: number * number, numbers))
+print(squares)
+'''
+[1, 4, 9, 16, 25]
+'''
+================================================================
+98:map-grades
+scores = [88, 92, 78, 95, 86]
+grade = lambda score: 'A' if score >= 90 else 'B' if score >= 80 else 'C' if score >= 70 else 'D' if score >= 60 else 'F'
+grades = list(map(grade, scores))
+print(grades)
+'''
+['B', 'A', 'C', 'A', 'B']
+'''
+================================================================
+99:reduce-sum
+from functools import reduce
+numbers = [10, 20, 30, 40]
+total = reduce(lambda first, second: first + second, numbers)
+print(total)
+'''
+100
+'''
+================================================================
+100:reduce-product
+from functools import reduce
+numbers = [2, 3, 4, 5]
+product = reduce(lambda first, second: first * second, numbers)
+print(product)
+'''
+120
+'''
+================================================================
+101:reduce maximum
+from functools import reduce
+numbers = [12, 45, 7, 31, 20]
+maximum = reduce(lambda first, second: first if first > second else second, numbers)
+print(maximum)
+'''
+45
+'''
+=================================================================
+102:matrix-transpose-lambda
+matrix = [[1, 2], [3, 4], [5, 6], [7, 8]]
+transpose = lambda rows: [list(column) for column in zip(*rows)]
+print(transpose(matrix))
+'''
+[[1, 3, 5, 7], [2, 4, 6, 8]]
+'''
+===============================================================
+103:recursive lambda factorial
+factorial = lambda number: 1 if number <= 1 else number * factorial(number - 1)
+number = int(input('Enter number: '))
+print(factorial(number))
+'''
+Enter number: 33
+8683317618811886495518194401280000000
+'''
+===============================================================
+104:sort-matrix
+def sort_matrix(matrix):
+    return sorted(matrix)
+matrix = [[1, 2, 3], [2, 4, 5], [1, 1, 1]]
+print(sort_matrix(matrix))
+'''
+[[1, 1, 1], [1, 2, 3], [2, 4, 5]]
+'''
+=================================================================
+105:extract-strings
+def extract_string(string_list, length):
+    return [word for word in string_list if len(word) >= length]
+words = ['Python', 'list', 'exercises', 'practice', 'solution']
+print(extract_string(words, 8))
+'''
+['exercises', 'practice', 'solution']
+'''
+================================================================
+106:sort-subject-marks
+subject_marks = [('English', 88), ('Science', 90), ('Maths', 97), ('Social sciences', 82)]
+result = sorted(subject_marks, key=lambda subject: subject[1])
+print(result)
+'''
+[('Social sciences', 82), ('English', 88), ('Science', 90), ('Maths', 97)]
+'''
+================================================================
+107:sort-mobile-models
+models = [{'make': 'Nokia', 'model': 21, 'color': 'Black'}, {'make': 'Mi Max', 'model': 20, 'color': 'Gold'}, {'make': 'Samsung', 'model': 17, 'color': 'Blue'}]
+result = sorted(models, key=lambda mobile: mobile['model'])
+print(result)
+'''
+[{'make': 'Samsung', 'model': 17, 'color': 'Blue'}, {'make': 'Mi Max', 'model': 20, 'color': 'Gold'}, {'make': 'Nokia', 'model': 21, 'color': 'Black'}]
+'''
+==================================================================
+108:lambda-isdigit
+items = input('Enter values separated by spaces: ').split()
+check_digit = lambda item: item.isdigit()
+result = list(map(check_digit, items))
+print(result)
+'''
+Enter values separated by spaces: 1 34 65
+[True, True, True]
+'''
+=================================================================
+
+109.numbers = [12, 5, 34, 8, 19, 42, 7, 25, 16, 30]
+print(numbers)
+#[12, 5, 34, 8, 19, 42, 7, 25, 16, 30]
+==============================================
+
+110.numbers = [10, 20, 30, 40, 50]
+print('Length:', len(numbers))
+#Length: 5
+================================================
+
+111.numbers = [10, 20, 30, 40, 50]
+print('First:', numbers[0])
+print('Middle:', numbers[len(numbers) // 2])
+print('Last:', numbers[-1])
+'''First: 10
+Middle: 30
+Last: 50'''
+=================================================
+
+112.numbers = [10, 20, 30, 40, 50]
+reversed_numbers = []
+for index in range(len(numbers) - 1, -1, -1):
+    reversed_numbers.append(numbers[index])
+print(reversed_numbers)
+'''50, 40, 30, 20, 10]'''
+======================================================
+
+113.numbers = [10, 20, 30, 40, 50]
+total = 0
+for number in numbers:
+    total += number
+print('Sum:', total)
+#Sum: 150
+===========================================================
+
+114.numbers = [25, 8, 42, 16, 3, 31]
+largest = smallest = numbers[0]
+for number in numbers:
+    if number > largest:
+        largest = number
+    if number < smallest:
+        smallest = number
+print('Maximum:', largest)
+print('Minimum:', smallest)
+'''Maximum: 42
+Minimum: 3'''
+========================================================
+
+115.numbers = [10, 20, 10, 30, 10, 40]
+value = int(input('Enter value to count: '))
+count = 0
+for number in numbers:
+    if number == value:
+        count += 1
+print('Occurrences:', count)
+'''Enter value to count: 20
+Occurrences: 1'''
+==============================================
+
+116.items = ['pen', 'book', 'bag', 'scale']
+item = input('Enter item to search: ')
+if item in items:
+    print('Element exists.')
+else:
+    print('Element does not exist.')
+'''Enter item to search: book
+Element exists.'''
+===================================================
+
+117.items = ['pen', 'pencil', 'eraser']
+items.append('book')
+items.insert(1, 'marker')
+items.remove('pencil')
+print(items)
+'''['pen', 'marker', 'eraser', 'book']'''
+====================================================
+
+118.first = [1, 2, 3]
+second = [4, 5, 6]
+merged = first + second
+print(merged)
+#[1, 2, 3, 4, 5, 6]
+================================================
+
+119.numbers = [45, 12, 7, 31, 20]
+ascending = numbers[:]
+for i in range(len(ascending)):
+    for j in range(len(ascending) - 1):
+        if ascending[j] > ascending[j + 1]:
+            ascending[j], ascending[j + 1] = (ascending[j + 1], ascending[j])
+descending = ascending[::-1]
+print('Ascending:', ascending)
+print('Descending:', descending)
+'''Ascending: [7, 12, 20, 31, 45]
+Descending: [45, 31, 20, 12, 7]'''
+==================================================
+
+120.original = [10, 20, 30]
+copied = original.copy()
+copied.append(40)
+print('Original:', original)
+print('Copy:', copied)
+'''Original: [10, 20, 30]
+Copy: [10, 20, 30, 40]'''
+=======================================================
+
+121.numbers = [1, 2, 2, 3, 1, 4, 3]
+unique = []
+for number in numbers:
+    if number not in unique:
+        unique.append(number)
+print(unique)
+#[1, 2, 3, 4]
+======================================================
+
+122.text_numbers = ['10', '20', '30', '40']
+numbers = []
+for value in text_numbers:
+    numbers.append(int(value))
+print(numbers)
+#[10, 20, 30, 40]
+=======================================================
+
+123.numbers = [65, 72, 80, 91, 77]
+total = 0
+for number in numbers:
+    total += number
+print('Average:', total / len(numbers))
+'''Average: 77.0'''
+===================================================
+
+124.numbers = [12, 45, 7, 31, 20, 45]
+unique = []
+for number in numbers:
+    if number not in unique:
+        unique.append(number)
+unique.sort()
+print('Second smallest:', unique[1])
+print('Second largest:', unique[-2])
+'''Second smallest: 12
+Second largest: 31'''
+======================================================
+
+125.numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+size = int(input('Enter chunk size: '))
+chunks = []
+for index in range(0, len(numbers), size):
+    chunks.append(numbers[index:index + size])
+print(chunks)
+'''Second smallest: 12
+Second largest: 31'''
+==================================================
+
+126.nested = [[1, 2], [3, 4], [5, 6]]
+flat = []
+for row in nested:
+    for value in row:
+        flat.append(value)
+print(flat)
+#[1, 2, 3, 4, 5, 6]
+==================================================
+
+127.first = [1, 2, 3, 4, 5]
+second = [3, 4, 5, 6, 7]
+common = []
+for number in first:
+    if number in second and number not in common:
+        common.append(number)
+print(common)
+#[3, 4, 5]
+=====================================================
+
+128.first = [1, 2, 3, 4, 5]
+second = [3, 4, 6]
+result = []
+for number in first:
+    if number not in second:
+        result.append(number)
+print(result)
+'''[1, 2, 5]
+'''
+=====================================================
+
+129.numbers = [1, 2, 3, 4, 5]
+positions = int(input('Enter positions: ')) % len(numbers)
+print('Left:', numbers[positions:] + numbers[:positions])
+print('Right:', numbers[-positions:] + numbers[:-positions])
+'''Enter positions: 3
+Left: [4, 5, 1, 2, 3]
+Right: [3, 4, 5, 1, 2]'''
+==================================================
+
+130.numbers = [1, 2, 3, 2, 4, 2, 5]
+value = int(input('Enter value to remove: '))
+result = []
+for number in numbers:
+    if number != value:
+        result.append(number)
+print(result)
+'''Enter value to remove: 2
+[1, 3, 4, 5]'''
+======================================================
+
+131.numbers = [2, 4, 3, 5, 7, 8, 1]
+target = int(input('Enter target sum: '))
+for i in range(len(numbers)):
+    for j in range(i + 1, len(numbers)):
+        if numbers[i] + numbers[j] == target:
+            print(numbers[i], numbers[j])
+'''Enter target sum: 3
+2 1'''
+===================================================
+
+132.numbers = [1, 2, 3, 4, 5, 6, 7, 8]
+even = []
+odd = []
+for number in numbers:
+    if number % 2 == 0:
+        even.append(number)
+    else:
+        odd.append(number)
+print('Even:', even)
+print('Odd:', odd)
+'''Even: [2, 4, 6, 8]
+Odd: [1, 3, 5, 7]'''
+===============================================
+
+133.numbers = [1, 2, 1, 3, 2, 1]
+frequency = {}
+for number in numbers:
+    frequency[number] = frequency.get(number, 0) + 1
+print(frequency)
+#{1: 3, 2: 2, 3: 1}
+=============================================
+
+134.numbers = [10, 20, 30, 40, 50]
+first = int(input('First position: '))
+second = int(input('Second position: '))
+numbers[first], numbers[second] = (numbers[second], numbers[first])
+print(numbers)
+'''First position: 1
+Second position: 2
+[10, 30, 20, 40, 50]'''
+===================================================
+
+135.numbers = [1, 2, 3, 2, 1]
+if numbers == numbers[::-1]:
+    print('Palindrome list')
+else:
+    print('Not a palindrome list')
+#Palindrome list
+===============================================
+
+136.numbers = [10, 20, 30, 20, 40, 20]
+value = int(input('Enter value: '))
+first = -1
+last = -1
+for index in range(len(numbers)):
+    if numbers[index] == value:
+        if first == -1:
+            first = index
+        last = index
+print('First index:', first)
+print('Last index:', last)
+'''Enter value: 20
+First index: 1
+Last index: 5'''
+=============================================
+
+137.values = ['Python', None, '', 'Java', 0, [], 'List']
+cleaned = []
+for value in values:
+    if value is not None and value != '':
+        cleaned.append(value)
+print(cleaned)
+'''['Python', 'Java', 0, [], 'List']'''
+=========================================
+
+138.first = [1, 3, 5]
+second = [2, 4, 6]
+result = []
+for index in range(len(first)):
+    result.append(first[index])
+    result.append(second[index])
+print(result)
+#[1, 2, 3, 4, 5, 6]
+============================================
+
+139.first = [1, 2, 3, 4]
+second = [3, 4, 5, 6]
+print('Intersection:', list(set(first) & set(second)))
+print('Union:', list(set(first) | set(second)))
+print('Difference:', list(set(first) - set(second)))
+'''Intersection: [3, 4]
+Union: [1, 2, 3, 4, 5, 6]
+Difference: [1, 2]'''
+============================================
+
+140.numbers = [100, 4, 200, 1, 3, 2, 5]
+values = set(numbers)
+longest = 0
+for number in values:
+    if number - 1 not in values:
+        length = 1
+        while number + length in values:
+            length += 1
+        if length > longest:
+            longest = length
+print('Longest consecutive length:', longest)
+#Longest consecutive length: 5
+=================================================
+
+141.numbers = [1, 2, 3, 4, 5, 6]
+groups = {'even': [], 'odd': []}
+for number in numbers:
+    if number % 2 == 0:
+        groups['even'].append(number)
+    else:
+        groups['odd'].append(number)
+print(groups)
+#{'even': [2, 4, 6], 'odd': [1, 3, 5]}
+===============================================
+
+142.squares = [number * number for number in range(1, 21)]
+print(squares)
+#[1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, 361, 400]
+===============================================
+
+143.characters = ['p', 'y', 't', 'h', 'o', 'n', 'a', 'e']
+result = [character for character in characters if character.lower() not in 'aeiou']
+print(result)
+#['p', 'y', 't', 'h', 'n']
+===================================================
+
+144.pairs = [(number, number * number) for number in range(1, 11)]
+print(pairs)
+#[(1, 1), (2, 4), (3, 9), (4, 16), (5, 25), (6, 36), (7, 49), (8, 64), (9, 81), (10, 100)]
+======================================================
+
+145.matrix = [[1, 2, 3], [4, 5, 6]]
+flat = [value for row in matrix for value in row]
+print(flat)
+#[1, 2, 3, 4, 5, 6]
+============================================
+
+146.primes = []
+for number in range(2, 101):
+    prime = True
+    for divisor in range(2, number):
+        if number % divisor == 0:
+            prime = False
+            break
+    if prime:
+        primes.append(number)
+print(primes)
+#[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
+================================================
+
+147.words = ['python', 'list', 'practice']
+uppercase_words = [word.upper() for word in words]
+print(uppercase_words)
+#['PYTHON', 'LIST', 'PRACTICE']
+=========================================
+
+148.sentence = input('Enter a sentence: ')
+words = sentence.split()
+long_words = [word for word in words if len(word) > 5]
+print(long_words)
+'''Enter a sentence: hepiii
+['hepiii']'''
+======================================
+
+149.table = [[number * value for value in range(1, 11)] for number in range(1, 11)]
+for row in table:
+    print(row)
+'''[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+[2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+[3, 6, 9, 12, 15, 18, 21, 24, 27, 30]
+[4, 8, 12, 16, 20, 24, 28, 32, 36, 40]
+[5, 10, 15, 20, 25, 30, 35, 40, 45, 50]
+[6, 12, 18, 24, 30, 36, 42, 48, 54, 60]
+[7, 14, 21, 28, 35, 42, 49, 56, 63, 70]
+[8, 16, 24, 32, 40, 48, 56, 64, 72, 80]
+[9, 18, 27, 36, 45, 54, 63, 72, 81, 90]
+[10, 20, 30, 40, 50, 60, 70, 80, 90, 100]'''
+================================================
+
+150.numbers = [10, 15, 20, 30, 45, 60, 75]
+result = [number for number in numbers if number % 3 == 0 and number % 5 == 0]
+print(result)
+#[15, 30, 45, 60, 75]
+===================================================
+
+151.marks = [78, 85, 62, 91, 74, 88, 69, 95, 80, 72]
+marks.insert(2, 76)
+marks.remove(62)
+marks[0] = 82
+marks.sort()
+print('Sorted:', marks)
+marks.reverse()
+print('Reversed:', marks)
+print('Highest:', max(marks))
+print('Lowest:', min(marks))
+print('Average:', sum(marks) / len(marks))
+'''Sorted: [69, 72, 74, 76, 80, 82, 85, 88, 91, 95]
+Reversed: [95, 91, 88, 85, 82, 80, 76, 74, 72, 69]
+Highest: 95
+Lowest: 69
+Average: 81.2'''
+==============================================
+
+152.numbers = [int(value) for value in input('Enter numbers separated by spaces: ').split()]
+unique = []
+for number in numbers:
+    if number not in unique:
+        unique.append(number)
+print('Unique list:', unique)
+'''Enter numbers separated by spaces: 18 34
+Unique list: [18, 34]'''
+====================================================
+
+153.items = []
+while True:
+    print('1 Add  2 Remove  3 Search  4 Update  5 Sort  6 Display  7 Exit')
+    choice = input('Choose: ')
+    if choice == '1':
+        items.append(input('Item: '))
+    elif choice == '2':
+        item = input('Item: ')
+        if item in items:
+            items.remove(item)
+    elif choice == '3':
+        print('Found' if input('Item: ') in items else 'Not found')
+    elif choice == '4':
+        old = input('Old item: ')
+        if old in items:
+            items[items.index(old)] = input('New item: ')
+    elif choice == '5':
+        items.sort()
+    elif choice == '6':
+        print(items)
+    elif choice == '7':
+        break
+    else:
+        print('Invalid choice')
+'''1 Add  2 Remove  3 Search  4 Update  5 Sort  6 Display  7 Exit
+Choose: 1
+Item: phone
+1 Add  2 Remove  3 Search  4 Update  5 Sort  6 Display  7 Exit
+Choose: 6
+['phone']'''
+=================================================
+
+154.first = [5, 2, 8, 2]
+second = [3, 8, 1, 5]
+merged = []
+for number in first + second:
+    if number not in merged:
+        merged.append(number)
+merged.sort()
+print('Ascending:', merged)
+print('Descending:', merged[::-1])
+'''Ascending: [1, 2, 3, 5, 8]
+Descending: [8, 5, 3, 2, 1]'''
+====================================================
+
+155.numbers = [int(input('Enter number ' + str(i) + ': ')) for i in range(1, 16)]
+even = [number for number in numbers if number % 2 == 0]
+odd = [number for number in numbers if number % 2 != 0]
+for name, group in [('Even', even), ('Odd', odd)]:
+    print(name, 'list:', group)
+    if group:
+        print('Count:', len(group), 'Sum:', sum(group), 'Max:', max(group), 'Min:', min(group))
+'''Enter number 1: 23
+Enter number 2: 22
+Enter number 3: 47
+Enter number 4: 60
+Enter number 5: 55
+Enter number 6: 43
+Enter number 7: 14
+Enter number 8: 54
+Enter number 9: 32
+Enter number 10: 45
+Enter number 11: 66
+Enter number 12: 88
+Enter number 13: 39
+Enter number 14: 32
+Enter number 15: 56
+Even list: [22, 60, 14, 54, 32, 66, 88, 32, 56]
+Count: 9 Sum: 424 Max: 88 Min: 14
+Odd list: [23, 47, 55, 43, 45, 39]
+Count: 6 Sum: 252 Max: 55 Min: 23'''
+=======================================================
+
+156.employees = ['Aarav', 'Diya', 'Kabir']
+name = input('Enter employee name: ')
+if name in employees:
+    employees[employees.index(name)] = input('Enter updated name: ')
+else:
+    employees.append(name)
+print(employees)
+'''Enter employee name: hepii
+['Aarav', 'Diya', 'Kabir', 'hepii']'''
+===============================================
+
+157.words = input('Enter a sentence: ').lower().split()
+frequency = {}
+unique = []
+for word in words:
+    frequency[word] = frequency.get(word, 0) + 1
+    if word not in unique:
+        unique.append(word)
+print('Frequency:', frequency)
+print('Without repeated words:', unique)
+'''Enter a sentence: heyy
+Frequency: {'heyy': 1}
+Without repeated words: ['heyy']'''
+=============================================
+
+158.students = [[101, 'Aarav', 82], [102, 'Diya', 91], [103, 'Kabir', 76]]
+students.sort(key=lambda student: student[2], reverse=True)
+print('Topper:', students[0])
+print('Sorted students:', students)
+'''Topper: [102, 'Diya', 91]
+Sorted students: [[102, 'Diya', 91], [101, 'Aarav', 82], [103, 'Kabir', 76]]'''
+===================================================
+
+159.items = []
+while True:
+    print('1 Append 2 Insert 3 Extend 4 Remove 5 Pop 6 Sort 7 Reverse')
+    print('8 Count 9 Index 10 Copy 11 Clear 12 Display 13 Exit')
+    choice = input('Choose: ')
+    if choice == '1':
+        items.append(input('Value: '))
+    elif choice == '2':
+        items.insert(int(input('Position: ')), input('Value: '))
+    elif choice == '3':
+        items.extend(input('Values separated by spaces: ').split())
+    elif choice == '4':
+        value = input('Value: ')
+        if value in items:
+            items.remove(value)
+    elif choice == '5':
+        print('Removed:', items.pop() if items else 'List is empty')
+    elif choice == '6':
+        items.sort()
+    elif choice == '7':
+        items.reverse()
+    elif choice == '8':
+        print(items.count(input('Value: ')))
+    elif choice == '9':
+        value = input('Value: ')
+        print(items.index(value) if value in items else 'Not found')
+    elif choice == '10':
+        print('Copy:', items.copy())
+    elif choice == '11':
+        items.clear()
+    elif choice == '12':
+        print(items)
+    elif choice == '13':
+        break
+'''1 Append 2 Insert 3 Extend 4 Remove 5 Pop 6 Sort 7 Reverse
+8 Count 9 Index 10 Copy 11 Clear 12 Display 13 Exit
+Choose: 1
+Value: phone
+1 Append 2 Insert 3 Extend 4 Remove 5 Pop 6 Sort 7 Reverse
+8 Count 9 Index 10 Copy 11 Clear 12 Display 13 Exit
+Choose: 12
+['phone']'''
+===================================================================
+
+160.numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print('First five:', numbers[:5])
+print('Last five:', numbers[-5:])
+print('Alternate:', numbers[::2])
+print('Reverse:', numbers[::-1])
+'''First five: [1, 2, 3, 4, 5]
+Last five: [6, 7, 8, 9, 10]
+Alternate: [1, 3, 5, 7, 9]
+Reverse: [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]'''
+=========================================================
+
+161.numbers = list(range(1, 21))
+result = []
+for number in numbers:
+    prime = number >= 2
+    for divisor in range(2, number):
+        if number % divisor == 0:
+            prime = False
+    if not prime:
+        result.append(number)
+print(result)
+#[1, 4, 6, 8, 9, 10, 12, 14, 15, 16, 18, 20]
+=======================================================
+
+162.first = [int(value) for value in input('First list: ').split()]
+second = [int(value) for value in input('Second list: ').split()]
+if len(first) == len(second):
+    third = []
+    for index in range(len(first)):
+        third.append(first[index] + second[index])
+    print(third)
+else:
+    print('Lists must have equal size.')
+'''First list: 34 21
+Second list: 13 56
+[47, 77]'''
+=====================================================
+
+163.words = ['apple', 'banana', 'cat', 'orange', 'sky']
+longest = words[0]
+shortest = words[0]
+vowel_start = []
+consonant_end = []
+for word in words:
+    if len(word) > len(longest):
+        longest = word
+    if len(word) < len(shortest):
+        shortest = word
+    if word[0].lower() in 'aeiou':
+        vowel_start.append(word)
+    if word[-1].lower() not in 'aeiou':
+        consonant_end.append(word)
+print('Longest:', longest)
+print('Shortest:', shortest)
+print('Starts with vowel:', vowel_start)
+print('Ends with consonant:', consonant_end)
+'''Longest: banana
+Shortest: cat
+Starts with vowel: ['apple', 'orange']
+Ends with consonant: ['cat', 'sky']'''
+=================================================
+
+164.numbers = [int(value) for value in input('Enter numbers: ').split()]
+k = int(input('Enter k: ')) % len(numbers)
+print('Left:', numbers[k:] + numbers[:k])
+print('Right:', numbers[-k:] + numbers[:-k])
+'''Enter numbers: 23
+Enter k: 2
+Left: [23]
+Right: [23]'''
+================================================
+
+165.numbers = [12, 45, 7, 31, 20, 45]
+largest = second_largest = float('-inf')
+smallest = second_smallest = float('inf')
+for number in numbers:
+    if number > largest:
+        second_largest, largest = (largest, number)
+    elif largest > number > second_largest:
+        second_largest = number
+    if number < smallest:
+        second_smallest, smallest = (smallest, number)
+    elif smallest < number < second_smallest:
+        second_smallest = number
+print('Second largest:', second_largest)
+print('Second smallest:', second_smallest)
+'''Second largest: 31
+Second smallest: 12'''
+==============================================
+
+166.numbers = [5, -2, 10, -8, 0, 3]
+for index in range(len(numbers)):
+    if numbers[index] < 0:
+        numbers[index] = 0
+print(numbers)
+#[5, 0, 10, 0, 0, 3]
+========================================
+
+167.numbers = [int(value) for value in input('Enter numbers: ').split()]
+positive = [number for number in numbers if number > 0]
+negative = [number for number in numbers if number < 0]
+zero = [number for number in numbers if number == 0]
+print('Positive:', positive)
+print('Negative:', negative)
+print('Zero:', zero)
+''''Enter numbers: 21
+Positive: [21]
+Negative: []
+Zero: []'''
+====================================
+
+168.cities = ['Ahmedabad', 'Surat']
+while True:
+    print('1 Add 2 Display 3 Update 4 Delete 5 Exit')
+    choice = input('Choose: ')
+    if choice == '1':
+        cities.append(input('City: '))
+    elif choice == '2':
+        print(cities)
+    elif choice == '3':
+        city = input('Existing city: ')
+        if city in cities:
+            cities[cities.index(city)] = input('New city: ')
+    elif choice == '4':
+        city = input('City: ')
+        if city in cities:
+            cities.remove(city)
+    elif choice == '5':
+        break
+'''1 Add 2 Display 3 Update 4 Delete 5 Exit
+Choose: 1
+City: talala
+1 Add 2 Display 3 Update 4 Delete 5 Exit
+Choose: 2
+['Ahmedabad', 'Surat', 'talala']'''
+=========================================
+
+169.numbers = [1, 2, 3, 2, 1]
+palindrome = True
+for index in range(len(numbers) // 2):
+    if numbers[index] != numbers[-1 - index]:
+        palindrome = False
+print('Palindrome' if palindrome else 'Not palindrome')
+#Palindrome
+=======================================
+
+170.first = [[1, 2], [3, 4]]
+second = [[5, 6], [7, 8]]
+addition = []
+for i in range(2):
+    row = []
+    for j in range(2):
+        row.append(first[i][j] + second[i][j])
+    addition.append(row)
+transpose = [[first[j][i] for j in range(2)] for i in range(2)]
+print('Addition:', addition)
+print('Transpose:', transpose)
+print('Row sums:', [sum(row) for row in first])
+print('Column sums:', [first[0][i] + first[1][i] for i in range(2)])
+'''Addition: [[6, 8], [10, 12]]
+Transpose: [[1, 3], [2, 4]]
+Row sums: [3, 7]
+Column sums: [4, 6]'''
+==========================================
+
+171.numbers = [1, 2, 4, 7, 8, 10]
+missing = []
+for number in range(min(numbers), max(numbers) + 1):
+    if number not in numbers:
+        missing.append(number)
+print(missing)
+#[3, 5, 6, 9]
+========================================
+
+172.numbers = [1, 2, 1, 3, 2, 1]
+frequency = {}
+for number in numbers:
+    frequency[number] = frequency.get(number, 0) + 1
+for number in frequency:
+    print(number, '|', frequency[number])
+'''1 | 3
+2 | 2
+3 | 1'''
+============================================
+
+173.numbers = [number for number in range(1, 101)]
+print('Squares:', [number * number for number in numbers])
+print('Cubes:', [number ** 3 for number in numbers])
+print('Even:', [number for number in numbers if number % 2 == 0])
+print('Odd:', [number for number in numbers if number % 2 != 0])
+print('Multiples of 5:', [number for number in numbers if number % 5 == 0])
+'''Squares: [1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, 361, 400, 441, 484, 529, 576, 625, 676, 729, 784, 841, 900, 961, 1024, 1089, 1156, 1225, 1296, 1369, 1444, 1521, 1600, 1681, 1764, 1849, 1936, 2025, 2116, 2209, 2304, 2401, 2500, 2601, 2704, 2809, 2916, 3025, 3136, 3249, 3364, 3481, 3600, 3721, 3844, 3969, 4096, 4225, 4356, 4489, 4624, 4761, 4900, 5041, 5184, 5329, 5476, 5625, 5776, 5929, 6084, 6241, 6400, 6561, 6724, 6889, 7056, 7225, 7396, 7569, 7744, 7921, 8100, 8281, 8464, 8649, 8836, 9025, 9216, 9409, 9604, 9801, 10000]
+Cubes: [1, 8, 27, 64, 125, 216, 343, 512, 729, 1000, 1331, 1728, 2197, 2744, 3375, 4096, 4913, 5832, 6859, 8000, 9261, 10648, 12167, 13824, 15625, 17576, 19683, 21952, 24389, 27000, 29791, 32768, 35937, 39304, 42875, 46656, 50653, 54872, 59319, 64000, 68921, 74088, 79507, 85184, 91125, 97336, 103823, 110592, 117649, 125000, 132651, 140608, 148877, 157464, 166375, 175616, 185193, 195112, 205379, 216000, 226981, 238328, 250047, 262144, 274625, 287496, 300763, 314432, 328509, 343000, 357911, 373248, 389017, 405224, 421875, 438976, 456533, 474552, 493039, 512000, 531441, 551368, 571787, 592704, 614125, 636056, 658503, 681472, 704969, 729000, 753571, 778688, 804357, 830584, 857375, 884736, 912673, 941192, 970299, 1000000]
+Even: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100]
+Odd: [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99]
+Multiples of 5: [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100]'''
+===============================================
+
+175.students = []
+while True:
+    print('1 Add 2 Display 3 Search 4 Update 5 Delete 6 Name sort 7 Marks sort 8 Topper 9 Average 10 Exit')
+    choice = input('Choose: ')
+    if choice == '1':
+        students.append([input('Name: '), float(input('Marks: '))])
+    elif choice == '2':
+        print(students)
+    elif choice == '3':
+        name = input('Name: ')
+        print([student for student in students if student[0] == name])
+    elif choice == '4':
+        name = input('Name: ')
+        for student in students:
+            if student[0] == name:
+                student[1] = float(input('New marks: '))
+    elif choice == '5':
+        name = input('Name: ')
+        students = [student for student in students if student[0] != name]
+    elif choice == '6':
+        students.sort(key=lambda student: student[0])
+    elif choice == '7':
+        students.sort(key=lambda student: student[1], reverse=True)
+    elif choice == '8':
+        print(max(students, key=lambda student: student[1]) if students else 'No records')
+    elif choice == '9':
+        print(sum((student[1] for student in students)) / len(students) if students else 'No records')
+    elif choice == '10':
+        break
+'''1 Add 2 Display 3 Search 4 Update 5 Delete 6 Name sort 7 Marks sort 8 Topper 9 Average 10 Exit
+Choose: 1
+Name: hepii
+Marks: 26
+1 Add 2 Display 3 Search 4 Update 5 Delete 6 Name sort 7 Marks sort 8 Topper 9 Average 10 Exit
+Choose: 2
+[['hepii', 26.0]]'''
+========================================================
+
+176:lambda-square
+square = lambda number: number * number
+print(square(6))
+'''
+36
+'''
+================================================================
+177:cube
+cube = lambda number: number ** 3
+print(cube(4))
+'''
+64
+'''
+=================================================================
+178:max-two
+maximum = lambda first, second: first if first > second else second
+print(maximum(12, 25))
+'''
+25
+'''
+=================================================================
+179:even-odd lambda
+check_even = lambda number: 'Even' if number % 2 == 0 else 'Odd'
+print(check_even(17))
+'''
+Odd
+'''
+==================================================================
+180:map-double
+numbers = [1, 2, 3, 4, 5]
+result = list(map(lambda number: number * 2, numbers))
+print(result)
+'''
+[2, 4, 6, 8, 10]
+'''
+==================================================================
+181:map-squares
+numbers = [1, 2, 3, 4, 5]
+result = list(map(lambda number: number * number, numbers))
+print(result)
+'''
+[1, 4, 9, 16, 25]
+'''
+===================================================================
+182:map-cubes
+numbers = [1, 2, 3, 4, 5]
+result = list(map(lambda number: number ** 3, numbers))
+print(result)
+'''
+[1, 8, 27, 64, 125]
+'''
+===================================================================
+183:map-add-five
+numbers = [1, 2, 3, 4, 5]
+result = list(map(lambda number: number + 5, numbers))
+print(result)
+'''
+[6, 7, 8, 9, 10]
+'''
+==================================================================
+184:map-uppercase
+words = ['python', 'lambda', 'function']
+result = list(map(lambda word: word.upper(), words))
+print(result)
+'''
+['PYTHON', 'LAMBDA', 'FUNCTION']
+'''
+=================================================================
+185:map-word-lengths
+words = ['python', 'list', 'lambda', 'program']
+result = list(map(lambda word: len(word), words))
+print(result)
+'''
+[6, 4, 6, 7]
+'''
+===================================================================
+186:filter-even
+numbers = [1, 2, 3, 4, 5, 6, 7, 8]
+result = list(filter(lambda number: number % 2 == 0, numbers))
+print(result)
+'''
+[2, 4, 6, 8]
+'''
+===================================================================
+187:filter-odd
+numbers = [1, 2, 3, 4, 5, 6, 7, 8]
+result = list(filter(lambda number: number % 2 != 0, numbers))
+print(result)
+'''
+[1, 3, 5, 7]
+'''
+==================================================================
+188:filter-greater
+numbers = [12, 55, 34, 72, 90, 45]
+result = list(filter(lambda number: number > 50, numbers))
+print(result)
+'''
+[55, 72, 90]
+'''
+===================================================================
+189:filter-less-25
+numbers = [12, 55, 24, 72, 9, 45]
+result = list(filter(lambda number: number < 25, numbers))
+print(result)
+'''
+[12, 24, 9]
+'''
+===================================================================
+190:filter-divisible-3-5
+numbers = [10, 15, 20, 30, 45, 50, 60]
+result = list(filter(lambda number: number % 3 == 0 and number % 5 == 0, numbers))
+print(result)
+'''
+[15, 30, 45, 60]
+'''
+===================================================================
+191:filter-positive
+numbers = [-10, 5, 0, -3, 12, 8]
+result = list(filter(lambda number: number > 0, numbers))
+print(result)
+'''
+[5, 12, 8]
+'''
+===================================================================
+192:filter-long-words
+words = ['cat', 'python', 'apple', 'programming', 'book']
+result = list(filter(lambda word: len(word) > 5, words))
+print(result)
+'''
+['python', 'programming']
+'''
+====================================================================
+193:filter-a-names
+names = ['Amit', 'Bina', 'Aarav', 'Diya', 'Anu']
+result = list(filter(lambda name: name.startswith('A'), names))
+print(result)
+'''
+['Amit', 'Aarav', 'Anu']
+'''
+=================================================================
+194:filter-contains-a
+words = ['python', 'apple', 'banana', 'list', 'java']
+result = list(filter(lambda word: 'a' in word.lower(), words))
+print(result)
+'''
+['apple', 'banana', 'java']
+'''
+==================================================================
+195:filter-empty-strings
+words = ['Python', '', 'Lambda', '', 'Program']
+result = list(filter(lambda word: word != '', words))
+print(result)
+'''
+['Python', 'Lambda', 'Program']
+'''
+====================================================================
+196:second largest
+numbers = [12, 45, 7, 31, 20, 45]
+largest = max(numbers)
+second_largest = max(filter(lambda number: number < largest, numbers))
+print(second_largest)
+'''
+31
+'''
+===================================================================
+197:greaterthan-average
+numbers = [12, 45, 7, 31, 20]
+average = sum(numbers) / len(numbers)
+result = list(filter(lambda number: number > average, numbers))
+print(result)
+'''
+[45, 31]
+'''
+===================================================================
+198:sort-descending
+numbers = [12, 45, 7, 31, 20]
+result = sorted(numbers, key=lambda number: number, reverse=True)
+print(result)
+'''
+[45, 31, 20, 12, 7]
+'''
+===================================================================
+199:sort-names-length
+names = ['Amit', 'Bina', 'Christopher', 'Diya', 'Kabir']
+result = sorted(names, key=lambda name: len(name))
+print(result)
+'''
+['Amit', 'Bina', 'Diya', 'Kabir', 'Christopher']
+'''
+===================================================================
+200:sort-students-marks
+students = [('Amit', 78), ('Bina', 92), ('Khrumil', 85)]
+result = sorted(students, key=lambda student: student[1])
+print(result)
+'''
+[('Amit', 78), ('Khrumil', 85), ('Bina', 92)]
+'''
+===================================================================
+201:sort-employees-salary
+employees = [('Amit', 45000), ('Bina', 62000), ('Khrumil', 51000)]
+result = sorted(employees, key=lambda employee: employee[1])
+print(result)
+'''
+[('Amit', 45000), ('Khrumil', 51000), ('Bina', 62000)]
+'''
+=================================================================
+202:sort-student-dictionaries
+students = [{'name': 'Amit', 'marks': 78}, {'name': 'Bina', 'marks': 92}, {'name': 'Khrumil', 'marks': 85}]
+result = sorted(students, key=lambda student: student['marks'])
+print(result)
+'''
+[{'name': 'Amit', 'marks': 78}, {'name': 'Khrumil', 'marks': 85}, {'name': 'Bina', 'marks': 92}]
+'''
+================================================================
+203:filter-high-salary
+employees = [{'name': 'Amit', 'salary': 45000}, {'name': 'Bina', 'salary': 62000}, {'name': 'Khrumil', 'salary': 51000}]
+result = list(filter(lambda employee: employee['salary'] > 50000, employees))
+print(result)
+'''
+[{'name': 'Bina', 'salary': 62000}, {'name': 'Khrumil', 'salary': 51000}]
+'''
+=================================================================
+204:top-three-students
+students = [('Amit', 78), ('Bina', 92), ('Khrumil', 85), ('Diya', 95)]
+result = sorted(students, key=lambda student: student[1], reverse=True)[:3]
+print(result)
+'''
+[('Diya', 95), ('Bina', 92), ('Khrumil', 85)]
+'''
+=================================================================
+205:reduce-sum
+from functools import reduce
+numbers = [10, 20, 30, 40]
+result = reduce(lambda first, second: first + second, numbers)
+print(result)
+'''
+100
+'''
+==================================================================
+206:reduce-max
+from functools import reduce
+numbers = [12, 45, 7, 31, 20]
+result = reduce(lambda first, second: first if first > second else second, numbers)
+print(result)
+'''
+45
+'''
+==================================================================
+207:reduce-product
+from functools import reduce
+numbers = [2, 3, 4, 5]
+result = reduce(lambda first, second: first * second, numbers)
+print(result)
+'''
+120
+'''
+==================================================================
+208:even-squares
+numbers = [1, 2, 3, 4, 5, 6]
+even = filter(lambda number: number % 2 == 0, numbers)
+result = list(map(lambda number: number * number, even))
+print(result)
+'''
+[4, 16, 36]
+'''
+==================================================================
+209:divisible-by-three-cubes
+numbers = [1, 2, 3, 4, 5, 6, 9]
+divisible = filter(lambda number: number % 3 == 0, numbers)
+result = list(map(lambda number: number ** 3, divisible))
+print(result)
+'''
+[27, 216, 729]
+'''
+==================================================================
+210:salary-increase
+salaries = [35000, 45000, 52000, 60000]
+high_salaries = filter(lambda salary: salary > 40000, salaries)
+result = list(map(lambda salary: salary * 1.1, high_salaries))
+print(result)
+'''
+[49500.00000000001, 57200.00000000001, 66000.0]
+'''
+==================================================================
+211:passed-student
+students = [('Amit', 78), ('Bina', 35), ('Khrumil', 85), ('Diya', 28)]
+passed = filter(lambda student: student[1] >= 35, students)
+result = sorted(passed, key=lambda student: student[1])
+print(result)
+'''
+[('Bina', 35), ('Amit', 78), ('Khrumil', 85)]
+'''
+===================================================================
+212:vowel-words
+words = ['apple', 'banana', 'orange', 'sky', 'umbrella']
+vowel_words = filter(lambda word: word[0].lower() in 'aeiou', words)
+result = sorted(vowel_words, key=lambda word: len(word))
+print(result)
+'''
+['apple', 'orange', 'umbrella']
+'''
+===================================================================
+213:remove-duplicates-sort
+numbers = [5, 2, 8, 2, 5, 1, 3]
+indexed_numbers = enumerate(numbers)
+unique_pairs = filter(lambda pair: numbers.index(pair[1]) == pair[0], indexed_numbers)
+unique = map(lambda pair: pair[1], unique_pairs)
+result = sorted(unique)
+print(result)
+'''
+[1, 2, 3, 5, 8]
+'''
+==================================================================
+214:it-high-salary
+employees = [('Amit', 'IT', 55000), ('Bina', 'HR', 62000), ('Khrumil', 'IT', 48000), ('Diya', 'IT', 72000)]
+result = list(filter(lambda employee: employee[1] == 'IT' and employee[2] > 50000, employees))
+print(result)
+'''
+[('Amit', 'IT', 55000), ('Diya', 'IT', 72000)]
+'''
+==================================================================
+215:student-ranking
+students = [('Amit', 78), ('Bina', 92), ('Khrumil', 85), ('Diya', 95)]
+ranking = sorted(students, key=lambda student: student[1], reverse=True)
+for position, student in enumerate(ranking, 1):
+    print(position, student[0], student[1])
+'''
+1 Diya 95
+2 Bina 92
+3 Khrumil 85
+4 Amit 78
+'''
+==================================================================
+
+216.for i in range(15,0,-1):
+    print(i)
+    '''15
+14
+13
+12
+11
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1'''
+=======================================
+
+217.n=int(input('Enter No '))
+temp=n
+sum = 0
+while temp>0:
+    re=temp%10
+    sum+=re**3
+    temp//=10
+    if(n==sum):
+        print(n,"The number is armstrong")
+    else:
+        print(n,"The number is not armstrong")
+'''Enter No 12
+12 The number is not armstrong
+12 The number is not armstrong'''
+===========================================
+
+218.#1+2^2+3^3
+n=int(input('Enter No '))
+sum=0
+for i in range(1,n+1):
+    sum = sum + (i**i)
+print(sum)'''Enter No 12
+9211817190184'''
+============================================
+
+219.#1-3+5-7+9-11 
+n=int(input('Enter No '))
+flag =1
+sum = 0
+for i in range(1,n+1,2): 
+    sum = sum + (i*flag)
+    flag=flag*-1
+print(sum)
+'''Enter No 3
+-2'''
+==========================================
+
+220.unit =int(input('Enter no of Units '))
+if (unit<=100):
+    bill= unit *2
+elif (unit<=200):
+    bill = (100*2) + (unit-100) *3
+elif (unit<=300):
+    bill = (100*2)+ (100*3) + (unit-100) *5
+else :
+    bill = (100*2)+ (100*3) +(100*5) + (unit-100) *7
+
+print('Total amount of bill is =₹',bill)
+'''Enter no of Units 432
+Total amount of bill is =₹ 3324'''
+===========================================
+
+221.a=int(input('Enter number'))
+if a%2==0:
+    
+    print('Number is even')
+else :
+    print('Number is odd')
+    '''Enter number43
+Number is odd'''
+===========================================
+
+222.#print first 10 even no
+i=2
+while i<=20:
+    print(i)
+    i=i+2
+print("end")
+'''2
+4
+6
+8
+10
+12
+14
+16
+18
+20
+end'''
+========================================
+
+223.#find factorial of given no
+i=1
+ans=1
+n=int(input('Enter No '))
+while i<=n:
+    ans=ans*i
+    i=i+1
+print(ans)
+'''Enter No 4
+24'''
+============================================
+
+224.#fibbonancci series upto n
+n=int(input("Enter no")) 
+a=0
+b=1
+c=None
+print(a,end=" ")
+print(b,end=" ")
+while 1:
+    c=a+b
+    a=b
+    b=c
+    if(c>n):
+        break
+    else:
+        print(c,end=" ")
+'''Enter no2
+0 1 1 2 '''
+==========================================
+
+225.#print first 10 no
+i=1
+while i<=10:
+    print(i)
+    i=i+1
+'''1
+2
+3
+4
+5
+6
+7
+8
+9
+10'''
+==========================================
+
+226.Income=int(input("Enter Income "))
+if Income>=100000:
+    print('Premium Loan')   
+elif Income>=50000:
+    print('Standard Loan')
+elif Income>=25000:
+    print('Basic Loan')
+else :
+    print('Not Eligible')
+'''Enter Income 30000
+Basic Loan'''
+======================================
+
+227.a,b,c,d=int(input('Enter 4 Number'))
+if a>b and a>c and a>d :
+    print('Max number is: ',a)
+elif b>a and b>c and b>d :
+    print('Max number is: ',b)
+elif c>a and c>b and c>d :
+    print('Max number is: ',c)
+else :
+    print('Max number is: ',d)
+======================================
+
+228.Age =int(input('Enter your Age '))
+if (Age<5):
+    print('Free')
+elif (Age>=5 and Age<=12):
+     print('₹100')
+elif (Age>=13 and Age<=59):
+     print('₹200')
+else :
+     print('₹150')
+'''Enter your Age 18
+₹200'''
+======================================
+
+229.for i in range(1,6):
+    for j in range(1,i+1):
+        print(j,end=" ")
+    print()
+    '''1 
+1 2 
+1 2 3 
+1 2 3 4 
+1 2 3 4 5 '''
+====================================
+
+230.for i in range(1,6):
+    for j in range(1,i+1):
+        print(i,end=" ")
+    print()
+'''1 
+2 2 
+3 3 3 
+4 4 4 4 
+5 5 5 5 5 '''
+======================================
+
+231.for i in range(1,6):
+    for j in range(1,i+1):
+        print(chr(64+j),end=" ")
+    print()
+'''A 
+A B 
+A B C 
+A B C D 
+A B C D E '''
+==========================================
+
+232.for i in range(1,6):
+    for j in range(1,i+1):
+        print(chr(64+i),end=" ")
+    print()
+    '''A 
+B B 
+C C C 
+D D D D 
+E E E E E '''
+====================================
+
+233.w=5
+for i in range(1,6):
+    for j in range(1,w):
+        print(end="  ")
+    w=w-1
+    for j in range(1,i+1):
+            print(j,end=" ")
+    print()
+    '''1 
+      1 2 
+    1 2 3 
+  1 2 3 4 
+1 2 3 4 5 '''
+=================================
+
+234.w=5
+for i in range(1,6):
+    for j in range(1,w):
+        print(end=" ")
+    w=w-1
+    for j in range(1,i+1):
+            print(j,end=" ")
+    print()
+    '''    1 
+   1 2 
+  1 2 3 
+ 1 2 3 4 
+1 2 3 4 5 '''
+==============================
+235.w=5
+for i in range(5,0,-1):
+    for j in range(1,w):
+        print(end="")
+    w=w-1
+    for j in range(1,i+1):
+            print(j,end=" ")
+    print()
+    '''1 2 3 4 5 
+1 2 3 4 
+1 2 3 
+1 2 
+1 '''
+=================================
+
+236.n=int(input('Enter No :'))
+cou=0
+for i in range(1,n+1):
+    if n%i==0:
+        cou += 1
+if cou ==2:
+    print("Prime num")
+else:
+    print("Not Prime num")
+    '''Enter No :3
+Prime num'''
+=================================
+
+237.#find rev of given no
+n=int(input('Enter No '))
+rem=0
+temp = n
+while (n!=0):
+    rev= n%10
+    rev = rev *10 +rem
+    n=n/10
+print(rev)
+'''Enter No 10
+1e-322'''
+=================================
+
+238.Mark =int(input('Enter Marks '))
+if (Mark>=90):
+    print('Grade A')
+elif (Mark>=80):
+    print('Grade B')
+elif (Mark>=70):
+    print('Grade C')
+elif (Mark>=60):
+    print('Grade D')
+else :
+    print('Grade F')
+'''Enter Marks 69
+Grade D'''
+=====================================
+
+239.#find sum of given no
+i=1
+sum=0
+n=int(input('Enter No '))
+while i<=n:
+    n= n%10
+    sum = sum + i
+    i=i+1
+print(sum)
+'''Enter No 12
+3'''
+=====================================
+
+240.sum=0
+for i in range(1,11):
+    sum = sum + i
+print(sum)
+#55
+===============================
+
+241.speed=int(input("Enter speed "))
+if speed<=60:
+    fine='No Fine'   
+elif speed>60 and speed<=80:
+    fine=500
+elif speed>80 and speed<=100:
+    fine=1000
+elif speed<=100:
+    fine=2000
+print("Total amount of Fine is =₹",fine)
+'''Enter speed 80
+Total amount of Fine is =₹ 500'''
+=========================================
+
+242:error handling 
+try:
+    a = 5
+    b = 2
+    c = 0
+    d = a + b
+    e = a / c
+    ans = a + b + c
+    f = int("ebc")
+    print(a)
+    print(b)
+    print(c)
+
+except ZeroDivisionError:
+    print("Zero error")
+
+except ValueError:
+    print("Value error")
+
+print("Hello world")
+print(d)
+'''
+Zero error
+Hello world
+7
+'''
+=====================================================================
+243:error handling age-user
+class AgeError(Exception):
+    pass
+
+
+try:
+    age = int(input("Enter your age: "))
+
+    if age < 18:
+        raise AgeError("Age must be 18 or above")
+
+    print("You are eligible.")
+
+except AgeError as e:
+    print("Error:", e)
+'''
+Enter your age: 22
+You are eligible.
+'''
+=====================================================================
+244:errorhandling quntityerror
+class PriceError(Exception):
+    pass
+class QuantityError(Exception):
+    pass
+try:
+    price = int(input("Enter product price: "))
+    quantity = int(input("Enter product quantity: "))
+    if not(price < 100 and price<1000):
+        raise PriceError("Price must be 1 digit")
+    elif quantity <= 0:
+        raise QuantityError("Quantity must be greater than 0")
+    else:
+        print("Product price and quantity are valid.")
+        print("Price:", price)
+        print("Quantity:", quantity)
+except PriceError as e:
+    print("Price Error:", e)
+except QuantityError as e:
+    print("Quantity Error:", e)
+finally:
+    print("Success: Program execution completed.")
+'''
+Enter product price: 999
+Enter product quantity: 2
+Price Error: Price must be 1 digit
+Success: Program execution completed.
+'''
+===============================================================
+245:user-error
+class ProductPriceError(Exception):
+    pass
+
+
+try:
+    price = int(input("Enter product price: "))
+
+    if not(price < 100 and price<1000):
+        raise ProductPriceError("Price error")
+
+    print("Product price is valid:", price)
+
+except ProductPriceError as e:
+    print("Error:", e)
+'''
+Enter product price: 1000
+Error: Price error
+'''
+===============================================================
+246:file handling functions
+#1.create file 
+with open("data.txt", "w") as file:
+    for i in range(1, 4):
+        name = input("Enter name: ")
+        file.write(name + "\n")
+
+
+#2read file 
+with open("data.txt", "r") as file:
+    data = file.read()
+#print data
+print(data)
+
+
+#3no of character in file like lenth 
+print("No of character in file:", len(data))
+
+
+#4no of word in file
+b = data.split()
+print("No of word in file:", len(b))
+c = data.splitlines()
+print("No of line in file:", len(c))
+
+
+#5No of vowels 
+vow = "aeiouAEIOU"
+count = 0
+for i in data:
+    if i in vow:
+        count=count+1
+print("No of vowels in file:", count)
+
+
+#6.one file to another file to copy
+with open("data.txt", "r") as file:
+    data = file.read()
+with open("data1.txt", "w") as file:
+    data.upper()
+    file.write(data)
+
+#7.print second file data
+with open("data1.txt", "r") as file:
+    data = file.read()
+print(data)
+
+#8.readlines
+with open("data1.txt", "r") as file:
+    data = file.readline()
+print(data)
+while data:
+    print(data.strip())
+    data=file.readlines
+    print(data)
+
+#9.read all lines
+with open ("data.txt","r") as file:
+    data=file.readlines()
+    print(data)
+for index,line in enumerate(11,start=1):
+    print(f"Line{index}:{line.strip()}")
+
+#10.count total uppercase and lower case in file
+upper = 0
+lower = 0
+for i in data:
+    if i.isupper():
+        uppere =upper + 1
+    elif i.islower():
+        lower = lower + 1
+print("No of uppercase :", upper)
+print("No of lowercase:", lower)
+
+#11.count character specialsymbol and digit and space in file
+special = 0
+digits = 0
+spaces = 0
+for i in data:
+    if i.isdigit():
+        digits = digits + 1
+    elif i.isspace():
+        spaces = spaces + 1
+    else:
+        special = special + 1
+print("No of digits:", digits)
+print("No of spaces:", spaces)
+print("No of special symbols:", special)
+
+#12.search word in file
+word = input("Enter word to search: ")
+if word in data.split():
+    print("Word found in file.")
+else:
+    print("Word not found in file.")
+#13.replace specific word in file
+old = input("Enter word to replace: ")
+new = input("Enter new word:")
+with open("data.txt", "r") as file:
+    data = file.read()
+data = data.replace(old,new)
+with open("data.txt", "w") as file:
+    file.write(data)
+print("Word replaced successfully.")
+====================================================================
+247:login
+
+user_id = input("Enter User ID: ").strip()
+user_pass = input("Enter Password: ").strip()
+
+found = False
+
+
+    
+file = open("users.txt", "r")
+    
+    
+for line in file:
+        data = line.strip().split(",")
+        stored_user = data[0]
+        stored_pass = data[1]
+        
+        
+        if user_id == stored_user and user_pass == stored_pass:
+            found = True
+            break
+            
+file.close()
+
+if found:
+        print("Login Successful!")
+else:
+        print("Invalid User ID or Password.")
+===================================================================
+248:signup
+# signup.py - Sign Up Script
+
+print("=== SIGN UP ===")
+username = input("Enter User ID: ").strip()
+password = input("Enter Password: ").strip()
+
+# Open file in append mode ('a') so existing data isn't deleted
+file = open("users.txt", "a")
+
+# Write data separated by comma with a newline at the end
+file.write(username + "," + password + "\n")
+
+# Close the file
+file.close()
+
+print("Sign up successful! Data saved to users.txt")
+'''
+=== SIGN UP ===
+Enter User ID: 11
+Enter Password: 12345
+Sign up successful! Data saved to users.txt
+'''
+===============================================================
+249:inheritage
+class Employee:
+    def __init__(self, eid=0, enm="", bs=0):
+            self.eid = eid
+            self.enm = enm
+    def get_data(self):
+        self.emp_id = int(input("Enter Employee ID: "))
+        self.name = input("Enter Employee Name: ")
+
+    def put_data(self):
+        print("Employee ID:", self.emp_id)
+        print("Employee Name:", self.name)
+
+
+class Salary(Employee):
+    def get_data(self):
+        super().get_data()
+        self.bs = int(input("Enter Basic Salary: "))
+
+    def calculate_salary(self):
+        if self.bs < 5000:
+            self.hra = self.bs * 0.10
+            self.da = self.bs * 0.20
+            self.pf = self.bs * 0.05
+
+        elif self.bs < 10000:
+            self.hra = self.bs * 0.20
+            self.da = self.bs * 0.40
+            self.pf = self.bs * 0.10
+
+        else:
+            self.hra = self.bs * 0.30
+            self.da = self.bs * 0.60
+            self.pf = self.bs * 0.15
+
+        self.ns = self.bs + self.hra + self.da - self.pf
+
+    def put_data(self):
+        #super().put_data()
+        
+        print("Basic Salary:", self.bs)
+        print("HRA:", self.hra)
+        print("DA:", self.da)
+        print("PF:", self.pf)
+        print("Net Salary:", self.ns)
+
+
+
+emp = Salary()
+
+emp.get_data()
+emp.calculate_salary()
+emp.put_data()
+'''
+Enter Employee ID: 1
+Enter Employee Name: hemanshi
+Enter Basic Salary: 10000
+Basic Salary: 10000
+HRA: 3000.0
+DA: 6000.0
+PF: 1500.0
+Net Salary: 17500.0
+'''
+==============================================================
+250:errorhandling
+try:
+    price = int(input("Enter price (100 to 1000): "))
+
+    if price < 100 or price > 1000:
+        raise ValueError("Price must be between 100 and 1000.")
+
+    print("Valid price:", price)
+
+except ValueError as e:
+    print("Error:", e)
+    '''
+    Enter price (100 to 1000): 400
+Valid price: 400
+'''
+===============================================================
+251:hierarchical-inheritance
+class Employee:
+    def __init__(self):
+        self.emp_id = 0
+        self.name = ""
+
+    def get_data(self):
+        self.emp_id = int(input("Enter Employee ID: "))
+        self.name = input("Enter Employee Name: ")
+
+    def put_data(self):
+        print("Employee ID:", self.emp_id)
+        print("Employee Name:", self.name)
+
+
+# Child class 1
+class Attendance(Employee):
+    def get_attendance(self):
+        self.total = int(input("Enter Total Days: "))
+        self.ptotal = int(input("Enter Total Present Days: "))
+        self.atotal = self.total - self.ptotal
+
+    def put_attendance(self):
+        print("Total Days:", self.total)
+        print("Present Days:", self.ptotal)
+        print("Absent Days:", self.atotal)
+
+
+# Child class 2
+class Salary(Employee):
+    def get_salary(self):
+        self.bs = int(input("Enter Basic Salary: "))
+
+    def calculate_salary(self):
+        if self.bs < 5000:
+            self.hra = self.bs * 0.10
+            self.da = self.bs * 0.20
+            self.pf = self.bs * 0.05
+
+        elif self.bs < 10000:
+            self.hra = self.bs * 0.20
+            self.da = self.bs * 0.40
+            self.pf = self.bs * 0.10
+
+        else:
+            self.hra = self.bs * 0.30
+            self.da = self.bs * 0.60
+            self.pf = self.bs * 0.15
+
+        self.ns = self.bs + self.hra + self.da - self.pf
+
+    def put_salary(self):
+        print("Basic Salary:", self.bs)
+        print("HRA:", self.hra)
+        print("DA:", self.da)
+        print("PF:", self.pf)
+        print("Net Salary:", self.ns)
+
+
+# Attendance object
+print("----- ATTENDANCE -----")
+
+emp1 = Attendance()
+emp1.get_data()
+emp1.get_attendance()
+emp1.put_data()
+emp1.put_attendance()
+
+
+# Salary object
+print("\n----- SALARY -----")
+
+emp2 = Salary()
+emp2.get_data()
+emp2.get_salary()
+emp2.calculate_salary()
+emp2.put_data()
+emp2.put_salary()
+'''
+----- ATTENDANCE -----
+Enter Employee ID: 101
+Enter Employee Name: hemanshi
+Enter Total Days: 3
+Enter Total Present Days: 4
+Employee ID: 101
+Employee Name: hemanshi
+Total Days: 3
+Present Days: 4
+Absent Days: -1
+
+----- SALARY -----
+Enter Employee ID: 101
+Enter Employee Name: hemanshi
+Enter Basic Salary: 20000
+Employee ID: 101
+Employee Name: hemanshi
+Basic Salary: 20000
+HRA: 6000.0
+DA: 12000.0
+PF: 3000.0
+Net Salary: 35000.0
+'''
+=================================================================
+252:multipleinheritance
+class Employee:
+    def __init__(self):
+        self.emp_id = 0
+        self.name = ""
+
+    def get_data(self):
+        self.emp_id = int(input("Enter Employee ID: "))
+        self.name = input("Enter Employee Name: ")
+
+    def put_data(self):
+        print("Employee ID:", self.emp_id)
+        print("Employee Name:", self.name)
+
+
+class Attendance(Employee):
+    def get_data(self):
+        super().get_data()
+
+        self.total = int(input("Enter Total Days: "))
+        self.ptotal = int(input("Enter Total Present Days: "))
+
+        self.atotal = self.total - self.ptotal
+
+    def put_data(self):
+        super().put_data()
+
+        print("Total Days:", self.total)
+        print("Present Days:", self.ptotal)
+        print("Absent Days:", self.atotal)
+
+
+class Salary(Attendance):
+    def get_data(self):
+        super().get_data()
+
+        self.bs = int(input("Enter Basic Salary: "))
+
+    def calculate_salary(self):
+
+        if self.bs < 5000:
+            self.hra = self.bs * 0.10
+            self.da = self.bs * 0.20
+            self.pf = self.bs * 0.05
+
+        elif self.bs < 10000:
+            self.hra = self.bs * 0.20
+            self.da = self.bs * 0.40
+            self.pf = self.bs * 0.10
+
+        else:
+            self.hra = self.bs * 0.30
+            self.da = self.bs * 0.60
+            self.pf = self.bs * 0.15
+
+      
+        self.ns = self.bs + self.hra + self.da - self.pf
+
+        self.ns = (self.ns * self.ptotal) / self.total
+
+    def put_data(self):
+        super().put_data()
+
+        print("Basic Salary:", self.bs)
+        print("HRA:", self.hra)
+        print("DA:", self.da)
+        print("PF:", self.pf)
+        print("Net Salary:", self.ns)
+
+
+
+emp = Salary()
+
+emp.get_data()
+
+emp.calculate_salary()
+
+emp.put_data()
+'''
+Employee Name: hemanhi
+Total Days: 4
+Present Days: 2
+Absent Days: 2
+Basic Salary: 20000
+HRA: 6000.0
+DA: 12000.0
+PF: 3000.0
+Net Salary: 17500.0
+'''
+==========================================================
+
+252.class student:
+
+    def __init__(self):
+        self.rno=21
+        self.name = "Vashi"
+        self.age = 19
+        self.marks=[20,20,20]
+    def display(self):
+        print("Name :", self.name)
+        print("Age :", self.age)     
+    def getData(self):
+        self.rno = int(input("Enter the Roll Number : "))
+        self.name = input("Enter the Name : ")
+        self.age = int(input("Enter the Age : "))
+
+        self.marks = []
+        for i in range(1, 4):
+            self.marks.append(int(input("Enter the Marks : ")))
+    def getData1(self,rno,name,age):
+        self.rno = rno
+        self.name = name
+        self.age = age
+
+        self.marks = []
+        for i in range(1, 4):
+            self.marks.append(int(input("Enter the Marks : ")))
+    def calculate(self):
+        self.total = sum(self.marks)
+        self.per = self.total / 3
+
+    def putData(self):
+        print("Roll No :", self.rno)
+        print("Name :", self.name)
+        print("Age :", self.age)
+        print("Marks :", self.marks)
+        print("Total :", self.total)
+        print("Percentage :", self.per)
+
+
+
+s1 = student()
+s1.display()
+
+s1.getData()
+s1.calculate()
+s1.putData()
+'''Name : Vashi
+Age : 19
+Enter the Roll Number : 57
+Enter the Name : hepi
+Enter the Age : 18
+Enter the Marks : 50
+Enter the Marks : 34
+Enter the Marks : 54
+Roll No : 2
+Name : hepi
+Age : 18
+Marks : [50, 34, 54]
+Total : 138
+Percentage : 46.0'''
+====================================================
+
+253.class employee:
+    def __init__(self):
+        self.emp_id = 0
+        self.name = ""
+        self.bs = 0
+    def __init__(self,emp_id,name,bs):
+        self.emp_id = int(input("Enter ID: "))
+        self.name = input("Enter Name: ")
+        self.sal = float(input("Enter Salary: "))
+        self.hra = float(input("Enter HRA: "))
+        self.da = float(input("Enter DA: "))
+        self.pf = float(input("Enter PF: "))
+    def cal(self):
+        if self.bs<5000:
+            self.hra=self.bs*0.10
+            self.da=self.bs*0.20
+            self.pf=self.bs*0.05
+        elif self.bs>=5000 and self.bs<10000:
+            self.hra=self.bs*0.20
+            self.da=self.bs*0.40
+            self.pf=self.bs*0.10
+        else:
+            self.hra=self.bs*0.30
+            self.da=self.bs*0.60
+            self.pf=self.bs*0.15
+        self.ns=self.bs+self.hra+self.da-self.pf
+
+
+
+n = int(input("Enter number of employees: "))
+emp=[]
+for i in range(n):
+    e= emp()
+    e.getData()
+    e.cal()
+    emp.append(e)
+print("Employee details")
+
+for e in emp:
+    e.putData()
+    print("---------------")
+    def putData(self):
+        print("Emp no is:", self.emp_id)
+        print("Name is:", self.name)
+        print("Basic Salary is:", self.bs)
+        print("HRA is:", self.hra)
+        print("DA is:", self.da)
+        print("PF is:", self.pf)
+        print("Net Salary is:", self.ns)
+
+====================================================
+
+254.records = []
+class employee:
+    def insert_record(self):
+        emp_id = int(input("Enter ID: "))
+        name = input("Enter Name: ")
+        sal = int(input("Enter Salary: "))
+        hra = int(input("Enter HRA: "))
+        da = int(input("Enter DA: "))
+        pf = int(input("Enter PF: "))
+        record = {
+            "id": emp_id,
+            "name": name,
+            "sal": sal,
+            "hra": hra,
+            "da": da,
+            "pf": pf
+        }
+
+        records.append(record)
+        print("Record inserted successfully!")
+
+    def display(self):
+        print("\n--- Employee Records ---")
+        for r in records:
+            print("ID:", r["id"])
+            print("Name:", r["name"])
+            print("Salary:", r["sal"])
+            print("HRA:", r["hra"])
+            print("DA:", r["da"])
+            print("PF:", r["pf"])
+            print("----------------------")
+    def calculate_salary(self):
+        print("\n--- Salary Calculation ---")
+
+        for r in records:
+            sal = r["sal"]
+            if sal <= 5000:
+                hra = sal * 0.10
+                da = sal * 0.05
+            elif sal <= 7000:
+                hra = sal * 0.15
+                da = sal * 0.10
+            elif sal <= 10000:
+                hra = sal * 0.20
+                da = sal * 0.15
+            else:
+                hra = sal * 0.25
+                da = sal * 0.20
+
+            gross = sal + hra + da
+            pf = sal * 0.12
+            net = gross - pf
+
+            print("ID:", r["id"])
+            print("Name:", r["name"])
+            print("Basic Salary:", sal)
+            print("HRA:", hra)
+            print("DA:", da)
+            print("PF:", pf)
+            print("Gross Salary:", gross)
+            print("Net Salary:", net)
+            print("----------------------")
+obj.display()
+obj.calculate_salary()
+============================================
